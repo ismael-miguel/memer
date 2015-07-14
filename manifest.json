@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Memer_CR",
+  "version": "0.1",
+  "description": "Translates memes to hover overs and links",
+  "permissions": ["http://chat.stackexchange.com/rooms/8595/the-2nd-monitor", "http://chat.stackexchange.com/rooms/25699/javascript-libraries", "http://chat.stackexchange.com/rooms/25394/the-nth-monitor"]
+  , "homepage_url": "http://codereview.stackexchange.com/q/96724/18427"
+  ,  "content_scripts": [
+    {
+      "matches": ["http://chat.stackexchange.com/rooms/8595/the-2nd-monitor", "http://chat.stackexchange.com/rooms/25699/javascript-libraries"],
+      "js": ["MemeTranslator001.js"]
+    }
+  ]  
+}
