@@ -3,11 +3,11 @@
 	"memes": {
 		"BTW." : {
 			"title": "Backronymizing btw, by way of BTW Enum",
-			"href" : 1646
+			"id" : 1646
 		},
 		"Stargreed": {
 			"title": "Someone agrees by way of starring the chat post",
-			"href": 2175,
+			"id": 2175,
 			"find": ["(stargreed)", "gi"]
 		},
 		"zombie": {
@@ -31,7 +31,7 @@
 			"find": ["(RSA)", "g"]
 		},
 		"Thanks, Santa!": {
-			"title": "When someone upvotes a post, and you don\"t know who, just say this ",
+			"title": "When someone upvotes a post, and you don't know who, just say this ",
 			"id": 1526
 		},
 		"IWNPFETTOLAI": {
@@ -67,8 +67,8 @@
 			"title": "Probably HOLY CRAP misspelled",
 			"id": 4928
 		},
-		"Malachi\'d": {
-			"title": "Something amusing or entertaining that hasn\"t been starred yet ",
+		"Malachi'd": {
+			"title": "Something amusing or entertaining that hasn't been starred yet ",
 			"id": 1667
 		},
 		"JDQ": {
