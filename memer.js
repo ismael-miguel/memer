@@ -1,6 +1,16 @@
 ;(function (window, undefined){
 	'use strict';
 	var memes = {
+		'BTW.' : {
+			'title': 'Backronymizing btw, by way of BTW Enum',
+			'href' : 'http://meta.codereview.stackexchange.com/a/1646',
+			'find' : new RegExp('(btw.)','gi')
+		},
+		'Stargreed': {
+			'title': 'someone agrees by way of starring the chat post',
+			'href': 'http://meta.codereview.stackexchange.com/a/2175',
+			'find': new RegExp('(stargreed)','gi')
+		},
 		'zombie': {
 			'title': 'Unanswered question (or with answers without upvotes)',
 			'href': 'http://meta.codereview.stackexchange.com/a/1511/',
