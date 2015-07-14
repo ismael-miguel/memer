@@ -1,74 +1,13 @@
 ;(function (window, undefined){
 	'use strict';
-	var memes = {
-		'zombie': {
-			'title': 'Unanswered question (or with answers without upvotes)',
-			'href': 'http://meta.codereview.stackexchange.com/a/1511/',
-			'find': new RegExp('(zombie)', 'gi')
-		},
-		'Jamalized': {
-			'title': 'Being Jamalized means that Jamal edited your question / answer ',
-			'href': 'http://meta.codereview.stackexchange.com/a/1675/',
-			'find': new RegExp('(jamalized)', 'gi')
-		},
-		'TS': {
-			'title': 'Theoretical Star (star it and say &quot;RSA&quot;)',
-			'href': 'http://meta.codereview.stackexchange.com/a/1514/',
-			'find': new RegExp('(TSA?)', 'g')
-		},
-		'RSA':{
-			'title': 'Real Star Applied (you say it after staring a message with & quot;TS & quot;)',
-			'href': 'http://meta.codereview.stackexchange.com/a/1514/',
-			'find': new RegExp('(RSA)', 'g')
-		},
-		'Thanks, Santa!': {
-			'title': 'When someone upvotes a post, and you don\'t know who, just say this ',
-			'href': 'http://meta.codereview.stackexchange.com/a/1526/'
-		},
-		'IWNPFETTOLAI': {
-			'title': 'I will not provide further explanation than this overly long acronym itself ',
-			'href': 'http://meta.codereview.stackexchange.com/a/1673/'
-		},
-		'Monking': {
-			'title': 'A greeting to the Monkey doing his monkey-business',
-			'href': 'http://meta.codereview.stackexchange.com/a/1678/',
-			'find': new RegExp('(monk(?:ing|ernoon|evening|night))', 'gi')
-		},
-		'TTQW': {
-			'title': 'Time To Quit Work',
-			'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-		},
-		'TTGH': {
-			'title': 'Time To Go Home',
-			'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-		},
-		'TTGTB': {
-			'title': 'Time To Go To Bed',
-			'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-		},
-		'STM': {
-			'title': 'Smoking The Documentation',
-			'href': 'http://meta.codereview.stackexchange.com/a/1953/'
-		},
-		'overengineering': {
-			'title': 'A case of when something has become overly - engineered ',
-			'href': 'http://meta.codereview.stackexchange.com/a/2520/'
-		},
-		'HOLY CARP': {
-			'title': 'Probably HOLY CRAP misspelled',
-			'href': 'http://meta.codereview.stackexchange.com/a/4928/'
-		},
-		'Malachi\'d': {
-			'title': 'Something amusing or entertaining that hasn\'t been starred yet ',
-			'href': 'http://meta.codereview.stackexchange.com/a/1667/'
-		},
-		'JDQ': {
-			'title': 'JavaDeveloper Question',
-			'href': 'http://meta.codereview.stackexchange.com/a/2053/'
-		}
-	};
-	//just in case of jQuer.noConflict();
+	//Just in case of jQuery.noConflict();
 	(function($) {
+		
+		var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+		//Please, StackExchange, give us something decent!
+		var SITE = $('#footer-logo img')[0].src.match(/static.net\/([^\/]+)\//)[1];
+		
+		//avoids creating a global function
 		var translate = function() {
 			$('#chat .message:not([data-checked="1"])')
 				.attr('data-checked', 1)
@@ -84,25 +23,25 @@
 					var tmp_html = $('<div>');
 					tmp_html.text(this.nodeValue);
 
-					for (var meme in memes)
+					for (var meme_name in memes.memes)
 					{
+						var meme = memes.memes[meme_name];
+						var find = meme.find
+							? new RegExp(meme.find[0], meme.find[1])
+							: new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
+						var replace = [
+								'<a href="',
+								memes.meta ? '//' + memes.meta + '/a/' + meme.id : '#',
+								'" title="',
+								meme.title,
+								'" style = "border-bottom:1px dashed #000;color:#000;" > $1 </a>'
+							].join('');
+						
 						$(tmp_html).contents().each(function() {
+							//It's stupid, but it must be done
 							if (this.nodeType === window.Node.TEXT_NODE)
 							{
-								$(this).replaceWith(
-									this.nodeValue.replace(
-										memes[meme].find || new RegExp('(' + (meme.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g'), [
-											'<a href="',
-											memes[meme].href,
-											'" title="',
-											memes[meme].title,
-											'" 
-											style = "border-bottom:1px dashed #000;color:#000;" > ',
-											memes[meme].find ? '$1' : meme,
-											'</a>'
-										].join('')
-									)
-								);
+								$(this).replaceWith( this.nodeValue.replace(find, replace) );
 							}
 						});
 					}
@@ -113,9 +52,46 @@
 			setTimeout(translate, 5000);
 		};
 
+		var common = {}, memes = {};
+		
+		var error = function(html){
+			//yup, standard way to create the popup
+			popUp(0, 0)
+				.css({
+					'width': 'auto',
+					'maxWidth': 600,
+					'minWidth': 300,
+					'top': 0,
+					'left': 0
+				})
+				.addClass('user-popup')
+				.append(html);
+		};
+		
 
-		translate();
-		setTimeout(translate, 5000);
+		$.get(ROOT + '_common.json', function( data ){
+			if(data && (data = $.parseJSON(data)))
+			{
+				common = data;
+				
+				//this is really ugly!
+				$.get(ROOT + SITE + '.json', function( data ){
+					if(data && (data = $.parseJSON(data)))
+					{
+						memes = data;
+		
+						translate();
+						setTimeout(translate, 5000);
+						
+					}
+				}).error(function(){
+					error('<h3>Memer error:</h3><p>Failed to load <b>' + SITE + '.json</b></p>');
+				});
+				
+			}
+		}).error(function(){
+			error('<h3>Memer error:</h3><p>Failed to load <b>_common.json</b></p>');
+		});
 
 	})(window.jQuery);
 
