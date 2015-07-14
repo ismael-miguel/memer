@@ -8,7 +8,7 @@
   ,  "content_scripts": [
     {
       "matches": ["http://chat.stackexchange.com/rooms/8595/the-2nd-monitor", "http://chat.stackexchange.com/rooms/25699/javascript-libraries"],
-      "js": ["MemeTranslator001.js"]
+      "js": ["MemeTranslator.js"]
     }
   ]  
 }
