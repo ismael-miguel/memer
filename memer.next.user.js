@@ -6,6 +6,7 @@
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
+//      -- The-Quill
 // @run-at document-end
 // ==/UserScript==
 if (location.hostname == 'chat.stackexchange.com')
@@ -15,8 +16,8 @@ if (location.hostname == 'chat.stackexchange.com')
 		//Just in case of jQuery.noConflict();
 		(function($) {
 			
-			var REPO = 'https://github.com/ismael-miguel/memer/';
-			var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+			var REPO = 'https://github.com/The-Quill/memer/';
+			var ROOT = 'https://raw.githubusercontent.com/The-Quill/memer/master/memes/';
 			//Please, StackExchange, give us something decent!
 			//This fixed a bug where another chat plugin would break the matching
 			var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];

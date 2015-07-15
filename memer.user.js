@@ -9,6 +9,7 @@
 //		-- Ismael Miguel
 //		-- Malachi26
 // @run-at document-end
+// @grant none
 // ==/UserScript==
 
 ;(function(window, undefined){
