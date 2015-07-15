@@ -8,7 +8,7 @@
 //		-- Malachi26
 // @run-at document-end
 // ==/UserScript==
-if (location.hostname != 'chat.stackexchange.com')
+if (location.hostname == 'chat.stackexchange.com')
 {
 	;(function (window, undefined){
 		'use strict';
