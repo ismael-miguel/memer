@@ -18,7 +18,7 @@
 			"find": ["(zombie)", "gi"]
 		},
 		"Jamalized": {
-			"title": "Being Jamalized means that Jamal edited your question / answer",
+			"title": "Jamal being a frantic editor.",
 			"id": 1675,
 			"find": ["(jamalized)", "gi"]
 		},
@@ -76,6 +76,24 @@
 		"JDQ": {
 			"title": "JavaDeveloper Question",
 			"id": 2053
+		},
+		"RELOAD!": {
+			"title": "A reminder that a new StackDay has begun (UTC 00:00), see The Mission on Meta.CR for more info."
+		},
+		"JAVA": {
+			"title": "Question with the word JAVA (instead of Java) in the title or body, is often an indication that the poster is a beginner and/or that it's a low-quality question. This has led to the separation of JAVA from Java. They are now, at least among the regulars in The 2nd Monitor on Code Review, treated as two entirely different languages."
+		},
+		"Pimping": {
+			"title": "Posting questions or answers in chat to receive votes from other users."
+		},
+		"PHPOOP": {
+			"title": "PHP is frequently tagged along with OOP. The contraction of the two gave birth to phpoop. Only in the chatroom, though. (don't you dare actually create that tag!)."
+		},
+		"For some values of": {
+			"title": "Supposed to relate to a broad definition of the value."
+		},
+		"The Mission": {
+			"title": "An old series of meta posts and community events deployed to help CR stray back onto the path of a successful beta."
 		}
 	}
 }
