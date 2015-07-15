@@ -36,7 +36,7 @@
 		"Rory": {
 			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&quot;",
 			"id": 881,
-			"find": ["(rory(?: ?alsop))", "gi"]
+			"find": ["(rory(?: ?alsop)?)", "gi"]
 		},
 		"Sec.SE": {
 			"title": "The &quot;official&quot; name since 2011",
