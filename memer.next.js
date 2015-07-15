@@ -41,14 +41,12 @@
 							//It's stupid, but it must be done
 							if (this.nodeType === window.Node.TEXT_NODE)
 							{
-								$(this).replaceWith( this.nodeValue.replace(find, replace) );
+								$(this).replaceWith(this.nodeValue.replace(find, replace));
 							}
 						});
 					}
 
 					$(this).replaceWith(tmp_html.html());
-					
-					console.log(tmp_html);
 				});
 
 			setTimeout(translate, 5000);
