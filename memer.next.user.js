@@ -3,6 +3,7 @@
 // @description Translates memes to hover overs and links
 // @version 0.1
 // @match http://chat.stackexchange.com/rooms/*
+// @match http://chat.stackocerflow.com/rooms/*
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
@@ -111,19 +112,32 @@ if (location.hostname == 'chat.stackexchange.com')
 					})
 					.fail(function(){
 						failed++;
-						popup([ //what an ugly piece of code!
-							'<h3>Memer error:</h3>',
-							'<p>Failed to load <b>' + type + '.json</b></p>',
-							'<p>If you are sure your connection is working, head to',
-								' <a href="' + REPO + '">Memer\'s github</a> ',
-							'and provide your meme list.</p>'
-						].join(''));
+						//yeah, google chrome has an assy API. detects when running as extention
+						//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+						if(window.chrome && chrome.runtime && chrome.runtime.id)
+						{
+							alert('Memer error:\n\nFailed to load ' + type + '.json');
+						}
+						else
+						{
+							popup([ //what an ugly piece of code!
+								'<h3>Memer error:</h3>',
+								'<p>Failed to load <b>' + type + '.json</b></p>',
+								'<p>If you are sure your connection is working, head to',
+									' <a href="' + REPO + '">Memer\'s github</a> ',
+								'and provide your meme list.</p>'
+							].join(''));
+						}
 						meme_database[type] = {};
-					}).always(function() {
+					}).always(function(){
 						remaining--;
 						if(remaining <= 0 && !failed)
 						{
-							popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
+							//inly show when not running as an extention
+							if(!window.chrome && !window.chrome.runtime && !window.chrome.runtime.id)
+							{
+								popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
+							}
 							setTimeout(translate, 5000);
 						}
 					});
@@ -131,6 +145,5 @@ if (location.hostname == 'chat.stackexchange.com')
 			}
 			
 		})(window.jQuery);
-	
 	})(Function('return this')());
 }
