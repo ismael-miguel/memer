@@ -1,6 +1,7 @@
 {
 	"desc": "Memes used on The DMZ",
 	"meta": "meta.security.stackexchange.com/",
+	"list": "http://meta.security.stackexchange.com/questions/880/the-memes-of-information-security",
 	"memes": {
 		"Don't roll your own" : {
 			"title": "Don't make your own security scheme",
