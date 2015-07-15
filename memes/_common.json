@@ -1,5 +1,8 @@
 {
-	"IIRC": {
-		"title": "If I Recal/Remember Correctly"
+	"desc":"List of common memes/acronyms used all over the internet",
+	"memes": {
+		"IIRC": {
+			"title": "If I Recal/Remember Correctly"
+		}
 	}
 }
