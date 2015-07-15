@@ -34,7 +34,7 @@
 			"find": ["(security (?:monkeys|chimps?|chimpanze(?:es)?))", "gi"]
 		},
 		"Rory": {
-			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&qout;",
+			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&quot;",
 			"id": 881,
 			"find": ["(rory)", "gi"]
 		},
