@@ -22,39 +22,45 @@
 
 					var tmp_html = $('<div>');
 					tmp_html.text(this.nodeValue);
-
-					for (var meme_name in memes.memes)
-					{
-						var meme = memes.memes[meme_name];
-						var find = meme.find
-							? new RegExp(meme.find[0], meme.find[1])
-							: new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
-						var replace = [
-								'<a href="',
-								memes.meta ? '//' + memes.meta + '/a/' + meme.id : '#',
-								'" title="',
-								meme.title,
-								'" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
-							].join('');
-						
-						$(tmp_html).contents().each(function() {
-							//It's stupid, but it must be done
-							if (this.nodeType === window.Node.TEXT_NODE)
-							{
-								$(this).replaceWith(this.nodeValue.replace(find, replace));
-							}
-						});
-					}
+					
+					memerize(tmp_html, memes.memes);
+					
+					memerize(tmp_html, common);
 
 					$(this).replaceWith(tmp_html.html());
 				});
 
 			setTimeout(translate, 5000);
 		};
+		
+		var memerize = function(tmp_html, memes) {
+			for (var meme_name in memes)
+			{
+				var meme = memes[meme_name];
+				var find = meme.find
+					? new RegExp(meme.find[0], meme.find[1])
+					: new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
+				var replace = [
+						'<a href="',
+						memes.meta ? '//' + memes.meta + '/a/' + meme.id : 'javascript:void(0)',
+						'" title="',
+						meme.title,
+						'" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
+					].join('');
+				
+				$(tmp_html).contents().each(function() {
+					//It's stupid, but it must be done
+					if (this.nodeType === window.Node.TEXT_NODE)
+					{
+						$(this).replaceWith(this.nodeValue.replace(find, replace));
+					}
+				});
+			}
+		};
 
 		var common = {}, memes = {};
 		
-		var error = function(html){
+		var error = function(html) {
 			//yup, standard way to create the popup
 			popUp(0, 0)
 				.css({
