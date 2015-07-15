@@ -82,6 +82,8 @@ if (location.hostname == 'chat.stackexchange.com')
 				'memes': SITE
 			};
 			
+			var sources = ['common', 'memes'];
+			
 			var popup = function(html) {
 				//yup, standard way to create the popup
 				popUp(0, 0)
@@ -96,53 +98,56 @@ if (location.hostname == 'chat.stackexchange.com')
 					.append(html);
 			};
 			
-			var remaining = 0, failed = 0;
-			for(var type in meme_database)
-			{
-				remaining++;
-				//really? If I don't wrap it, it writes stuff on wrong places
-				(function(type){
-					$.get(
-						ROOT + meme_database[type] + '.json',
-						function(data) {
-						if(data && (data = $.parseJSON(data)))
+			var loader = function(){
+				var source = sources.shift();
+				$.get(
+					ROOT + meme_database[source] + '.json',
+					function(data) {
+					if(data && (data = $.parseJSON(data)))
+					{
+						meme_database[source] = data;
+					}
+				})
+				.fail(function(){
+					//yeah, google chrome has an assy API. detects when running as extention
+					//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+					if(window.chrome && chrome.runtime && chrome.runtime.id)
+					{
+						alert([
+							'Memer error:',
+							'Failed to load ' + meme_database[source] + '.json',
+							'Visit ' + REPO + ' and check if it is available or provide your own'
+						].join('\n'));
+					}
+					else
+					{
+						popup([ //what an ugly piece of code!
+							'<h3>Memer error:</h3>',
+							'<p>Failed to load <b>' + meme_database[source] + '.json</b></p>',
+							'<p>If you are sure your connection is working, head to',
+								' <a href="' + REPO + '">Memer\'s github</a> ',
+							'and provide your meme list.</p>'
+						].join(''));
+					}
+					meme_database[source] = {};
+				}).always(function(){
+					if(sources.length)
+					{
+						setTimeout(loader, 0);
+					}
+					else
+					{
+						//only show when not running as an extention
+						if(!window.chrome && !window.chrome.runtime && !window.chrome.runtime.id)
 						{
-							meme_database[type] = data;
+							popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
 						}
-					})
-					.fail(function(){
-						failed++;
-						//yeah, google chrome has an assy API. detects when running as extention
-						//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
-						if(window.chrome && chrome.runtime && chrome.runtime.id)
-						{
-							alert('Memer error:\n\nFailed to load ' + type + '.json');
-						}
-						else
-						{
-							popup([ //what an ugly piece of code!
-								'<h3>Memer error:</h3>',
-								'<p>Failed to load <b>' + type + '.json</b></p>',
-								'<p>If you are sure your connection is working, head to',
-									' <a href="' + REPO + '">Memer\'s github</a> ',
-								'and provide your meme list.</p>'
-							].join(''));
-						}
-						meme_database[type] = {};
-					}).always(function(){
-						remaining--;
-						if(remaining <= 0 && !failed)
-						{
-							//inly show when not running as an extention
-							if(!window.chrome && !window.chrome.runtime && !window.chrome.runtime.id)
-							{
-								popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
-							}
-							setTimeout(translate, 5000);
-						}
-					});
-				})(type.toString());//ensures it is not a reference, but a copy
-			}
+						setTimeout(translate, 5000);
+					}
+				});
+			};
+			
+			loader();
 			
 		})(window.jQuery);
 	})(Function('return this')());
