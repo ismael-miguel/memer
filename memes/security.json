@@ -1,0 +1,61 @@
+{
+	"desc": "Memes used on The DMZ",
+	"meta": "meta.security.stackexchange.com/",
+	"link": "http://meta.security.stackexchange.com/questions/880/the-memes-of-information-security",
+	"memes": {
+		"Don't roll your own" : {
+			"title": "Don't make your own security scheme",
+			"id": 915,
+			"find": ["(do(?:n'?t| ?not) roll your own)", "gi"]
+		},
+		"Don't be a Dave" : {
+			"title": "Dave is the name to who insists in using his own (weak) security schema",
+			"id": 1132,
+			"find": ["(do(?:n'?t| ?not) be (?:a|like) dave)", "gi"]
+		},
+		"Nuke it from orbit" : {
+			"title": "Destroy it and rebuild (best answer for infected machines)",
+			"id": 1118,
+			"find": ["(nuke (?:it )?from (?:the )?orbit)", "gi"]
+		},
+		"Law #x of Security" : {
+			"title": "Read the &quot;Immutable Laws&quot; of Security and Security Administration",
+			"id": 988,
+			"find": ["(law (?:#|no\\\\.?)?\\\\d+ of security(?: administration)?)", "gi"]
+		},
+		"Canonical Time Zone" : {
+			"title": "Greeting with a random timezone (or with &quot;Happy diurnal isomorphism&quot;)",
+			"id": 882,
+			"find": ["((?:C|[Cc]anonical )(?:T|[Tt]ime )(?:Z|[Zz]one))", "g"]
+		},
+		"Security Monkeys": {
+			"title": "A group who keeps a (legacy) security feature without knowing why",
+			"id": 1206,
+			"find": ["(security (?:monkeys|chimps?|chimpanze(?:es)?))", "gi"]
+		},
+		"Rory": {
+			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&quot;",
+			"id": 881,
+			"find": ["(rory(?: ?alsop)?)", "gi"]
+		},
+		"Sec.SE": {
+			"title": "The &quot;official&quot; name since 2011",
+			"id": 891,
+			"find": ["(sec\\\\.se)", "gi"]
+		},
+		"Bears": {
+			"title": "Usually refers to Thomas Pornin, our highest rep. user, due to his avatars",
+			"id": 884,
+			"find": ["(bears?)", "gi"]
+		},
+		"Security is Hard": {
+			"title": "It has been used to point the apparent dificulty they have with safety",
+			"id": 1101,
+			"find": ["(security is ha+r+d)", "gi"]
+		},
+		"FAW": {
+			"title": "Frequently/Funny Attacking Wildebeest, joking with Rory Alsop's misspelling of FAQ",
+			"id": 883
+		}
+	}
+}

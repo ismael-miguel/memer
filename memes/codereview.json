@@ -1,0 +1,81 @@
+{
+	"desc": "Memes used on The 2nd monitor and across the whole CodeReview website",
+	"meta": "meta.codereview.stackexchange.com",
+	"list": "http://meta.codereview.stackexchange.com/questions/1510/whats-a-zombie-and-what-are-the-many-other-memes-of-code-review",
+	"memes": {
+		"BTW." : {
+			"title": "Backronymizing btw, by way of BTW Enum",
+			"id" : 1646
+		},
+		"Stargreed": {
+			"title": "Someone agrees by way of starring the chat post",
+			"id": 2175,
+			"find": ["(stargreed)", "gi"]
+		},
+		"zombie": {
+			"title": "Unanswered question (or with answers without upvotes)",
+			"id": 1511,
+			"find": ["(zombie)", "gi"]
+		},
+		"Jamalized": {
+			"title": "Being Jamalized means that Jamal edited your question / answer",
+			"id": 1675,
+			"find": ["(jamalized)", "gi"]
+		},
+		"TS": {
+			"title": "Theoretical Star (star it and say &quot;RSA&quot;)",
+			"id": 1514,
+			"find": ["(TSA?)", "g"]
+		},
+		"RSA":{
+			"title": "Real Star Applied (you say it after staring a message with &quot;TS&quot;)",
+			"id": 1514,
+			"find": ["(RSA)", "g"]
+		},
+		"Thanks, Santa!": {
+			"title": "When someone upvotes a post, and you don't know who, just say this",
+			"id": 1526
+		},
+		"IWNPFETTOLAI": {
+			"title": "I will not provide further explanation than this overly long acronym itself",
+			"id": 1673
+		},
+		"Monking": {
+			"title": "A greeting to the Monkey doing his monkey-business",
+			"id": 1678,
+			"find": ["(monk(?:ing|ernoon|evening|night))", "gi"]
+		},
+		"TTQW": {
+			"title": "Time To Quit Work",
+			"id": 1643
+		},
+		"TTGH": {
+			"title": "Time To Go Home",
+			"id": 1643
+		},
+		"TTGTB": {
+			"title": "Time To Go To Bed",
+			"id": 1643
+		},
+		"STM": {
+			"title": "Smoking The Documentation",
+			"id": 1953
+		},
+		"overengineering": {
+			"title": "A case of when something has become overly - engineered",
+			"id": 2520
+		},
+		"HOLY CARP": {
+			"title": "Probably HOLY CRAP misspelled",
+			"id": 4928
+		},
+		"Malachi'd": {
+			"title": "Something amusing or entertaining that hasn't been starred yet",
+			"id": 1667
+		},
+		"JDQ": {
+			"title": "JavaDeveloper Question",
+			"id": 2053
+		}
+	}
+}
