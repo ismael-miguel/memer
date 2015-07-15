@@ -6,7 +6,8 @@
 		var REPO = 'https://github.com/ismael-miguel/memer/';
 		var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
 		//Please, StackExchange, give us something decent!
-		var SITE = $('#footer-logo img')[0].src.match(/static.net\/([^\/]+)\//)[1];
+		//This fixed a bug where another chat plugin would break the matching
+		var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];
 		
 		//avoids creating a global function
 		var translate = function() {
