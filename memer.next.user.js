@@ -6,8 +6,9 @@
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
-//      -- The-Quill
+//		-- The-Quill
 // @run-at document-end
+// @grant none
 // ==/UserScript==
 if (location.hostname == 'chat.stackexchange.com')
 {
