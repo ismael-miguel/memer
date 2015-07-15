@@ -1,6 +1,7 @@
 {
 	"desc": "Memes used on The DMZ",
 	"meta": "meta.security.stackexchange.com/",
+	"link": "http://meta.security.stackexchange.com/questions/880/the-memes-of-information-security",
 	"memes": {
 		"Don't roll your own" : {
 			"title": "Don't make your own security scheme",
@@ -20,7 +21,7 @@
 		"Law #x of Security" : {
 			"title": "Read the &quot;Immutable Laws&quot; of Security and Security Administration",
 			"id": 988,
-			"find": ["(law (?:#|no\\\.?)?\\\d+ of security(?: administration)?)", "gi"]
+			"find": ["(law (?:#|no\\\\.?)?\\\\d+ of security(?: administration)?)", "gi"]
 		},
 		"Canonical Time Zone" : {
 			"title": "Greeting with a random timezone (or with &quot;Happy diurnal isomorphism&quot;)",
@@ -40,7 +41,7 @@
 		"Sec.SE": {
 			"title": "The &quot;official&quot; name since 2011",
 			"id": 891,
-			"find": ["(sec\\\.se)", "gi"]
+			"find": ["(sec\\\\.se)", "gi"]
 		},
 		"Bears": {
 			"title": "Usually refers to Thomas Pornin, our highest rep. user, due to his avatars",
