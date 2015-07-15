@@ -34,7 +34,7 @@
 								memes.meta ? '//' + memes.meta + '/a/' + meme.id : '#',
 								'" title="',
 								meme.title,
-								'" style = "border-bottom:1px dashed #000;color:#000;" > $1 </a>'
+								'" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
 							].join('');
 						
 						$(tmp_html).contents().each(function() {
@@ -47,6 +47,8 @@
 					}
 
 					$(this).replaceWith(tmp_html.html());
+					
+					console.log(tmp_html);
 				});
 
 			setTimeout(translate, 5000);
