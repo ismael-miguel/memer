@@ -26,8 +26,8 @@ The links are simple match-and-replace made on text. This avoids re-matching an 
 
 You can open the Javascript file and paste it in your browser's console. Hitting <kbd>F12</kbd> will open the console for you.
 
-<del>Currently, it only works for CodeReview chats, due to the lack of memes for others.</del><br>
-<ins>Each chatroom has it's very own file, with a common file.</ins>
+<del>Currently, it only works for CodeReview chats, due to the lack of memes for others.</del><br/>
+Each chatroom has it's very own file, with a common file.
 
 A browser extension is planned in the near future, to ease the usage.<br>
 The Javascript file available is already a Greasemonkey-ready file.
