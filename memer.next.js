@@ -3,6 +3,7 @@
 	//Just in case of jQuery.noConflict();
 	(function($) {
 		
+		var REPO = 'https://github.com/ismael-miguel/memer/';
 		var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
 		//Please, StackExchange, give us something decent!
 		var SITE = $('#footer-logo img')[0].src.match(/static.net\/([^\/]+)\//)[1];
@@ -23,9 +24,10 @@
 					var tmp_html = $('<div>');
 					tmp_html.text(this.nodeValue);
 					
-					memerize(tmp_html, memes.memes);
-					
-					memerize(tmp_html, common);
+					for(var type in meme_database)
+					{
+						memerize(tmp_html, meme_database[type].memes);
+					}
 
 					$(this).replaceWith(tmp_html.html());
 				});
@@ -57,48 +59,62 @@
 				});
 			}
 		};
-
-		var common = {}, memes = {};
 		
-		var error = function(html) {
+		//this will be where all data is saved
+		var meme_database = {
+			'common': '_common',
+			'memes': SITE
+		};
+		
+		var popup = function(html) {
 			//yup, standard way to create the popup
 			popUp(0, 0)
 				.css({
 					'width': 'auto',
-					'maxWidth': 600,
+					'maxWidth': 300,
 					'minWidth': 300,
 					'top': 0,
-					'left': 0
+					'left': (window.innerWidth - 300) / 2
 				})
 				.addClass('user-popup')
 				.append(html);
 		};
 		
-
-		$.get(ROOT + '_common.json', function( data ){
-			if(data && (data = $.parseJSON(data)))
-			{
-				common = data;
-				
-				//this is really ugly!
-				$.get(ROOT + SITE + '.json', function( data ){
+		var remaining = 0, failed = 0;
+		for(var type in meme_database)
+		{
+			remaining++;
+			//really? If I don't wrap it, it writes stuff on wrong places
+			(function(type){
+				$.get(
+					ROOT + meme_database[type] + '.json',
+					function(data) {
 					if(data && (data = $.parseJSON(data)))
 					{
-						memes = data;
-		
-						translate();
-						setTimeout(translate, 5000);
-						
+						meme_database[type] = data;
 					}
-				}).error(function(){
-					error('<h3>Memer error:</h3><p>Failed to load <b>' + SITE + '.json</b></p>');
+				})
+				.fail(function(){
+					failed++;
+					popup([ //what an ugly piece of code!
+						'<h3>Memer error:</h3>',
+						'<p>Failed to load <b>' + type + '.json</b></p>',
+						'<p>If you are sure your connection is working, head to',
+							' <a href="' + REPO + '">Memer\'s github</a> ',
+						'and provide your meme list.</p>'
+					].join(''));
+					meme_database[type] = {};
+				}).always(function() {
+					remaining--;
+					if(remaining <= 0 && !failed)
+					{
+						popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
+						setTimeout(translate, 5000);
+					}
 				});
-				
-			}
-		}).error(function(){
-			error('<h3>Memer error:</h3><p>Failed to load <b>_common.json</b></p>');
-		});
-
+			})(type.toString());//ensures it is not a reference, but a copy
+		}
+		
 	})(window.jQuery);
 
 })(Function('return this')());
