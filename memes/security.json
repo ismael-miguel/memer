@@ -1,7 +1,6 @@
 {
 	"desc": "Memes used on The DMZ",
 	"meta": "meta.security.stackexchange.com/",
-	"list": "http://meta.security.stackexchange.com/questions/880/the-memes-of-information-security",
 	"memes": {
 		"Don't roll your own" : {
 			"title": "Don't make your own security scheme",
@@ -21,7 +20,7 @@
 		"Law #x of Security" : {
 			"title": "Read the &quot;Immutable Laws&quot; of Security and Security Administration",
 			"id": 988,
-			"find": ["(law (?:#|no\.?)?\d+ of security(?: administration)?)", "gi"]
+			"find": ["(law (?:#|no\\\.?)?\\\d+ of security(?: administration)?)", "gi"]
 		},
 		"Canonical Time Zone" : {
 			"title": "Greeting with a random timezone (or with &quot;Happy diurnal isomorphism&quot;)",
@@ -34,22 +33,22 @@
 			"find": ["(security (?:monkeys|chimps?|chimpanze(?:es)?))", "gi"]
 		},
 		"Rory": {
-			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&qout;"
+			"title": "A seemingly abnormal dominant name, used to replace other names &quot;a-lá-smurf&qout;",
 			"id": 881,
 			"find": ["(rory)", "gi"]
 		},
 		"Sec.SE": {
-			"title": "The &quot;official&quot; name since 2011"
+			"title": "The &quot;official&quot; name since 2011",
 			"id": 891,
-			"find": ["(sec\.se)", "gi"]
+			"find": ["(sec\\\.se)", "gi"]
 		},
 		"Bears": {
-			"title": "Usually refers to Thomas Pornin, our highest rep. user, due to his avatars"
+			"title": "Usually refers to Thomas Pornin, our highest rep. user, due to his avatars",
 			"id": 884,
 			"find": ["(bears?)", "gi"]
 		},
 		"Security is Hard": {
-			"title": "It has been used to point the apparent dificulty they have with safety"
+			"title": "It has been used to point the apparent dificulty they have with safety",
 			"id": 1101,
 			"find": ["(security is ha+r+d)", "gi"]
 		},
