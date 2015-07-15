@@ -42,7 +42,7 @@ if (location.hostname == 'chat.stackexchange.com')
 						
 						for(var type in meme_database)
 						{
-							memerize(tmp_html, meme_database[type].memes);
+							memerize(tmp_html, meme_database[type].memes,meme_database[type].meta);
 						}
 	
 						$(this).replaceWith(tmp_html.html());
@@ -51,7 +51,7 @@ if (location.hostname == 'chat.stackexchange.com')
 				setTimeout(translate, 5000);
 			};
 			
-			var memerize = function(tmp_html, memes) {
+			var memerize = function(tmp_html, memes, meta) {
 				for (var meme_name in memes)
 				{
 					var meme = memes[meme_name];
@@ -60,7 +60,7 @@ if (location.hostname == 'chat.stackexchange.com')
 						: new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
 					var replace = [
 							'<a href="',
-							memes.meta ? '//' + memes.meta + '/a/' + meme.id : 'javascript:void(0)',
+							meta && meme.id? '//' + meta + '/a/' + meme.id : 'javascript:void(0)',
 							'" title="',
 							meme.title,
 							'" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
