@@ -3,6 +3,9 @@
 	"memes": {
 		"IIRC": {
 			"title": "If I Recall/Remember Correctly"
+		},
+		"TWSS": {
+			"title": "That's What She Said"
 		}
 	}
 }
