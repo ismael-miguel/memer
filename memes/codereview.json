@@ -43,7 +43,7 @@
 		"Monking": {
 			"title": "A greeting to the Monkey doing his monkey-business",
 			"id": 1678,
-			"find": ["(monk(?:ing|ernoon|evening|night))", "gi"]
+			"find": ["(monk(?:ing|(?:er)?noon|evening|night))", "gi"]
 		},
 		"TTQW": {
 			"title": "Time To Quit Work",
