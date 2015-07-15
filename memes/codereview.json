@@ -1,6 +1,7 @@
 {
 	"desc": "Memes used on The 2nd monitor and across the whole CodeReview website",
 	"meta": "meta.codereview.stackexchange.com",
+	"list": "http://meta.codereview.stackexchange.com/questions/1510/whats-a-zombie-and-what-are-the-many-other-memes-of-code-review",
 	"memes": {
 		"BTW." : {
 			"title": "Backronymizing btw, by way of BTW Enum",
