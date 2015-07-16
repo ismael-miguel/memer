@@ -3,12 +3,12 @@
 // @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
 // @version 0.3
-// @match *chat.meta.stackexchange.com/rooms/*
-// @match *chat.stackexchange.com/rooms/*
-// @match *chat.stackoverflow.com/rooms/*
-// @match *chat.serverfault.com/rooms/*
-// @match *chat.superuser.com/rooms/*
-// @match *chat.askubuntu.com/rooms/*
+// @match *://chat.meta.stackexchange.com/rooms/*
+// @match *://chat.stackexchange.com/rooms/*
+// @match *://chat.stackoverflow.com/rooms/*
+// @match *://chat.serverfault.com/rooms/*
+// @match *://chat.superuser.com/rooms/*
+// @match *://chat.askubuntu.com/rooms/*
 // @author Ismael Miguel
 // @authors
 //		-- Ismael Miguel
