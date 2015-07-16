@@ -86,7 +86,7 @@
 			"id": 2045
 		},
 		"Pimping": {
-			"title": "Posting questions or answers in chat to receive votes from other users.",
+			"title": "Posting questions or answers in chat to receive votes from other users. Related to MTV's Pimp My Car.",
 			"id": 1706,
 			"find": ["(pimp(?:ed|ing)?)", "gi"]
 		},
@@ -102,8 +102,32 @@
 			"title": "An old series of meta posts and community events deployed to help CR stray back onto the path of a successful beta."
 		},
 		"Greetings, programs!": {
-			"title": "Tron, The Lecagy - style of Donald.McLean greeting us. Answer with &quot;Greetings, user&quot;",
+			"title": "Donald.McLean's Tron-style greeting. Answer with &quot;Greetings, user&quot; or, &quot;Greetings, Stargazer&quot;.",
 			"find": ["(greetings,? programs?!?)", "gi"]
+		},
+		"Starwall": {
+			"title": "When a series of chat messages are starred, resembles a wall."
+		},
+		"'Night!": {
+			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;."
+		},
+		"rolfl": {
+			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities."
+		},
+		"Jamal": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+		},
+		"200_success": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+		},
+		"Mat'sMug": {
+			"title": "One of CR's elected moderators."
+		},
+		"SimonAndréForsberg": {
+			"title": "One of CR's elected moderators, owner of Duga."
+		},
+		"Duga": {
+			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
 		}
 	}
 }

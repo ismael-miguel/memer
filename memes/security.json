@@ -9,7 +9,7 @@
 			"find": ["(do(?:n'?t| ?not) roll your own)", "gi"]
 		},
 		"Don't be a Dave" : {
-			"title": "Dave is the name to who insists in using his own (weak) security schema",
+			"title": "Dave is the individual who insists in using his own (weak) security schema",
 			"id": 1132,
 			"find": ["(do(?:n'?t| ?not) be (?:a|like) dave)", "gi"]
 		},
@@ -29,7 +29,7 @@
 			"find": ["((?:C|[Cc]anonical )(?:T|[Tt]ime )(?:Z|[Zz]one))", "g"]
 		},
 		"Security Monkeys": {
-			"title": "A group who keeps a (legacy) security feature without knowing why",
+			"title": "A group who keep a (legacy) security feature without knowing why",
 			"id": 1206,
 			"find": ["(security (?:monkeys|chimps?|chimpanze(?:es)?))", "gi"]
 		},
@@ -49,7 +49,7 @@
 			"find": ["(bears?)", "gi"]
 		},
 		"Security is Hard": {
-			"title": "It has been used to point the apparent dificulty they have with safety",
+			"title": "It has been used to point the apparent difficulty they have with safety",
 			"id": 1101,
 			"find": ["(security is ha+r+d)", "gi"]
 		},
