@@ -1,165 +1,154 @@
 // ==UserScript==
-// @name Memer_CR
+// @name Memer
 // @description Translates memes to hover overs and links
-// @version 0.1
-// @match http://chat.stackexchange.com/rooms/8595/the-2nd-monitor
-// @match http://chat.stackexchange.com/rooms/25699/javascript-libraries
-// @match http://chat.stackexchange.com/rooms/25394/the-nth-monitor
-// @authors 
+// @version 0.2
+// @match http://chat.stackexchange.com/rooms/*
+// @match http://chat.stackocerflow.com/rooms/*
+// @authors
 //		-- Ismael Miguel
 //		-- Malachi26
+//		-- The-Quill
 // @run-at document-end
 // @grant none
 // ==/UserScript==
-
-;(function(window, undefined){
-    'use strict';
-
-    var memes = {
-		'BTW.' : {
-			'title': 'Backronymizing btw, by way of BTW Enum',
-			'href' : 'http://meta.codereview.stackexchange.com/a/1646',
-			'find' : new RegExp('(btw.)','gi')
-		},
-		'Stargreed': {
-			'title': 'someone agrees by way of starring the chat post',
-			'href': 'http://meta.codereview.stackexchange.com/a/2175',
-			'find': new RegExp('(stargreed)','gi')
-		},
-        'zombie': {
-            'title': 'Unanswered question (or with answers without upvotes)',
-            'href': 'http://meta.codereview.stackexchange.com/a/1511/',
-            'find': new RegExp('(zombie)','gi')
-        },
-        'Jamalized': {
-            'title': 'Being Jamalized means that Jamal edited your question/answer',
-            'href': 'http://meta.codereview.stackexchange.com/a/1675/',
-            'find': new RegExp('(jamalized)','gi')
-        },
-        'TS': {
-            'title': 'Theoretical Star (star it and say &quot;RSA&quot;)',
-            'href': 'http://meta.codereview.stackexchange.com/a/1526/',
-            'find': new RegExp('(TS)','g')
-        },
-        'RSA': {
-            'title': 'Real Star Applied (you say it after staring a message with &quot;TS&quot;)',
-            'href': 'http://meta.codereview.stackexchange.com/a/1526/',
-            'find': new RegExp('(RSA)','g')
-        },
-        'Thanks, Santa!': {
-            'title': 'When someone upvotes a post, and you don\'t know who, just say this',
-            'href': 'http://meta.codereview.stackexchange.com/a/1526/'
-        },
-        'IWNPFETTOLAI': {
-            'title': 'I will not provide further explanation than this overly long acronym itself',
-            'href': 'http://meta.codereview.stackexchange.com/a/1673/'
-        },
-        'Monking': {
-            'title': 'A greeting to the Monkey doing his monkey-business',
-            'href': 'http://meta.codereview.stackexchange.com/a/1678/',
-            'find': new RegExp('(monk(?:ing|ernoon|evening|night))','gi')
-        },
-        'TTQW': {
-            'title': 'Time To Quit Work',
-            'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-        },
-        'TTGH': {
-            'title': 'Time To Go Home',
-            'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-        },
-        'TTGTB': {
-            'title': 'Time To Go To Bed',
-            'href': 'http://meta.codereview.stackexchange.com/a/1643/'
-        },
-        'STM': {
-            'title': 'Smoking The Documentation',
-            'href': 'http://meta.codereview.stackexchange.com/a/1953/'
-        },
-        'overengineering': {
-            'title': 'A case of when something has become overly-engineered',
-            'href': 'http://meta.codereview.stackexchange.com/a/2520/'
-        },
-        'HOLY CARP': {
-            'title': 'Probably HOLY CRAP misspelled',
-            'href': 'http://meta.codereview.stackexchange.com/a/4928/'
-        },
-        'Malachi\'d': {
-            'title': 'Something amusing or entertaining that hasn\'t been starred yet',
-            'href': 'http://meta.codereview.stackexchange.com/a/1667/'
-        },
-        'JDQ': {
-            'title': 'JavaDeveloper Question',
-            'href': 'http://meta.codereview.stackexchange.com/a/2053/'
-        }
-    },
-    translate = function(){
-        var messages = document.querySelectorAll('#chat .message:not([data-checked="1"])'),
-            fragment = document.createDocumentFragment(),
-            tmp_content = document.createElement('div');
-
-        if( messages && messages.length )
-        {
-            for(var i = 0, l = messages.length; i < l; i++)
-            {
-                var message = messages[i];
-
-                message.setAttribute('data-checked', '1');
-
-                var content = message.querySelector('.content');
-
-                if( content && !content.firstChild.className || content.firstChild.className.indexOf('onebox') === -1 )
-                {
-                    tmp_content.innerHTML = content.innerHTML;
-                    for(var meme in memes)
-                    {
-                        var html = '';
-                        for(var j = 0, m = tmp_content.childNodes.length; j < m; j++)
-                        {
-                            //text nodes only
-                            if( tmp_content.childNodes[j].nodeType === 3 )
-                            {
-                                if( memes[meme].find )
-                                {
-                                    html += tmp_content
-                                        .childNodes[j]
-                                        .nodeValue
-                                        .replace(memes[meme].find, '<a href="' + 
-                                            ( memes[meme].href || '#' ) +
-                                            '" target="_blank" title="' +
-                                            ( memes[meme].title || '' ) +
-                                            '" style="color:inherit;border-bottom:1px dashed #000">$1</a>'
-                                        );
-                                }
-                                else
-                                {
-                                    html += tmp_content
-                                        .childNodes[j]
-                                        .nodeValue
-                                        .replace(meme, '<a href="' + 
-                                            ( memes[meme].href || '#' ) +
-                                            '" target="_blank" title="' +
-                                            ( memes[meme].title || '' ) +
-                                            '" style="color:inherit;border-bottom:1px dashed #000">'+
-                                            meme+
-                                            '</a>'
-                                        );
-                                }
-                            }
-                            else if( tmp_content.childNodes[j].nodeType !== 8 )
-                            {
-                                html += tmp_content.childNodes[j].outerHTML;
-                            }
-                        }
-                        tmp_content.innerHTML = html;
-                    }
-                    content.innerHTML = tmp_content.innerHTML;
-                }
-            }
-        }
-    }
-
-    translate();
-
-    setInterval(translate, 1000);
-
-})(Function('return this')());
+if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.stackoverflow.com')
+{
+	;(function (window, undefined){
+		'use strict';
+		//Just in case of jQuery.noConflict();
+		(function($) {
+			
+			var REPO = 'https://github.com/ismael-miguel/memer/';
+			var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+			//Please, StackExchange, give us something decent!
+			//This fixed a bug where another chat plugin would break the matching
+			var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];
+			
+			//avoids creating a global function
+			var translate = function() {
+				$('#chat .message:not([data-checked="1"])')
+					.attr('data-checked', 1)
+					.find('>.content')
+					.filter(':not(:has(.onebox))')
+					.contents()
+					.filter(function() {
+	
+						return this.nodeType === window.Node.TEXT_NODE;
+	
+					}).each(function() {
+	
+						var tmp_html = $('<div>');
+						tmp_html.text(this.nodeValue);
+						
+						for(var type in meme_database)
+						{
+							memerize(tmp_html, meme_database[type].memes,meme_database[type].meta);
+						}
+	
+						$(this).replaceWith(tmp_html.html());
+					});
+	
+				setTimeout(translate, 5000);
+			};
+			
+			var memerize = function(tmp_html, memes, meta) {
+				for (var meme_name in memes)
+				{
+					var meme = memes[meme_name];
+					var find = meme.find
+						? new RegExp(meme.find[0], meme.find[1])
+						: new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
+					var replace = [
+							'<a href="',
+							meta && meme.id? '//' + meta + '/a/' + meme.id : 'javascript:void(0)',
+							'" title="',
+							meme.title,
+							'" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
+						].join('');
+					
+					$(tmp_html).contents().each(function() {
+						//It's stupid, but it must be done
+						if (this.nodeType === window.Node.TEXT_NODE)
+						{
+							$(this).replaceWith(this.nodeValue.replace(find, replace));
+						}
+					});
+				}
+			};
+			
+			//this will be where all data is saved
+			var meme_database = {
+				'common': '_common',
+				'memes': SITE
+			};
+			
+			var sources = ['common', 'memes'];
+			
+			var popup = function(html) {
+				//yup, standard way to create the popup
+				popUp(0, 0)
+					.css({
+						'width': 'auto',
+						'maxWidth': 300,
+						'minWidth': 300,
+						'top': 0,
+						'left': (window.innerWidth - 300) / 2
+					})
+					.addClass('user-popup')
+					.append(html);
+			};
+			
+			var loader = function(){
+				var source = sources.shift();
+				$.get(
+					ROOT + meme_database[source] + '.json',
+					function(data) {
+					if(data && (data = $.parseJSON(data)))
+					{
+						meme_database[source] = data;
+					}
+				})
+				.fail(function(){
+					//yeah, google chrome has an assy API. detects when running as extention
+					//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+					if(window.chrome && chrome.runtime && chrome.runtime.id)
+					{
+						alert([
+							'Memer error:',
+							'Failed to load ' + meme_database[source] + '.json',
+							'Visit ' + REPO + ' and check if it is available or provide your own'
+						].join('\n'));
+					}
+					else
+					{
+						popup([ //what an ugly piece of code!
+							'<h3>Memer error:</h3>',
+							'<p>Failed to load <b>' + meme_database[source] + '.json</b></p>',
+							'<p>If you are sure your connection is working, head to',
+								' <a href="' + REPO + '">Memer\'s github</a> ',
+							'and provide your meme list.</p>'
+						].join(''));
+					}
+					meme_database[source] = {};
+				}).always(function(){
+					if(sources.length)
+					{
+						setTimeout(loader, 0);
+					}
+					else
+					{
+						//only show when not running as an extention
+						if(!window.chrome && !window.chrome.runtime && !window.chrome.runtime.id)
+						{
+							popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
+						}
+						setTimeout(translate, 5000);
+					}
+				});
+			};
+			
+			loader();
+			
+		})(window.jQuery);
+	})(Function('return this')());
+}
