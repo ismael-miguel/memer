@@ -1,9 +1,35 @@
 {
 	"desc":"List of common memes/acronyms used all over the chat/internet",
 	"memes": {
+		/*
+		 * Not exactly memes, but just generalised abbreviations/names for things
+		 * May contain tags like 'SEN'
+		*/
+		"SEN": {
+			"title": "The Stack Exchange Network, the network that houses all the sites on Stack Exchange."
+		},
 		"IIRC": {
 			"title": "If I Recall/Remember Correctly"
 		},
+		"SNR": {
+			"title": "Sonic to Noise Ratio: Determines the ratio of crap-to-quality"
+		},
+		"Teacher's Lounge": {
+			"title": "A moderator only chatroom"
+		},
+		"Winter Bash": {
+			"title": "An event that occured during the winter of '14, where users far and wide had"
+		},
+		"Area 51": {
+			"title": "Stack Exchange's new-site-makerer, responsible for housing requests for new sites."
+		},
+		"waiting for design": {
+			"title": "Before a beta site can &quot;truly&quot; graduate, they need to receive their site design from SE."
+		},
+		/*
+		 * Onto the memes!
+		 * Contains generalised SEN memes, like Ponies, Jon Skeet, 6 to 8 weeks
+		*/
 		"TWSS": {
 			"title": "That's What She Said"
 		},
@@ -27,6 +53,9 @@
 		},
 		"Caching": {
 			"title": "Don't treat this text as true, caching is to blame."
+		},
+		"TLA": {
+			"title": "Terribly lazy answer."
 		}
 	}
 }

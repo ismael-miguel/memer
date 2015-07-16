@@ -1,9 +1,15 @@
 // ==UserScript==
 // @name Memer
+// @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
-// @version 0.2
-// @match http://chat.stackexchange.com/rooms/*
-// @match http://chat.stackocerflow.com/rooms/*
+// @version 0.3
+// @match *chat.meta.stackexchange.com/rooms/*
+// @match *chat.stackexchange.com/rooms/*
+// @match *chat.stackoverflow.com/rooms/*
+// @match *chat.serverfault.com/rooms/*
+// @match *chat.superuser.com/rooms/*
+// @match *chat.askubuntu.com/rooms/*
+// @author Ismael Miguel
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
@@ -11,17 +17,26 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
-if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.stackoverflow.com')
+var REPO = 'https://github.com/ismael-miguel/memer/';
+var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+var SITES = [
+	  'chat.meta.stackexchange.com'
+	, 'chat.stackexchange.com'
+	, 'chat.stackoverflow.com'
+	, 'chat.serverfault.com'
+	, 'chat.superuser.com'
+	, 'chat.askubuntu.com'
+	];
+if (SITES.indexOf(location.hostname) !== -1)
 {
 	;(function (window, undefined){
 		'use strict';
 		//Just in case of jQuery.noConflict();
 		(function($) {
-			
-			var REPO = 'https://github.com/ismael-miguel/memer/';
-			var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
-			//Please, StackExchange, give us something decent!
-			//This fixed a bug where another chat plugin would break the matching
+			/*
+			 * Please, StackExchange, give us something decent!
+			 * This fixes a bug where another chat plugin would break the matching
+			*/
 			var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];
 			
 			//avoids creating a global function
@@ -109,8 +124,10 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 					}
 				})
 				.fail(function(){
-					//yeah, google chrome has an assy API. detects when running as extention
-					//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+					/*
+					* Yeah, Google Chrome has an easy API, that detects when running as extention
+					* read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+				   */
 					if(window.chrome && chrome.runtime && chrome.runtime.id)
 					{
 						alert([
