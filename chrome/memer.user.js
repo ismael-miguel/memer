@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Memer
 // @description Translates memes to hover overs and links
-// @version 0.1
+// @version 0.2
 // @match http://chat.stackexchange.com/rooms/*
 // @match http://chat.stackocerflow.com/rooms/*
 // @authors
@@ -11,7 +11,7 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
-if (location.hostname == 'chat.stackexchange.com')
+if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.stackoverflow.com')
 {
 	;(function (window, undefined){
 		'use strict';
