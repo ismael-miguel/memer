@@ -1,14 +1,17 @@
 {
+	"desc": "Memes used on The 2nd monitor and across the whole CodeReview website",
 	"meta": "meta.codereview.stackexchange.com",
+	"list": "http://meta.codereview.stackexchange.com/questions/1510/whats-a-zombie-and-what-are-the-many-other-memes-of-code-review",
 	"memes": {
 		"BTW." : {
-			"title": "Backronymizing btw, by way of BTW Enum",
-			"href" : 1646
+			"title": "Backronymizing btw, by way of BTW Enum (BTW.Normal means &quot;By The Way&quot;)",
+			"id" : 1646,
+			"find": ["(BTW\\.[a-zA-Z]+)", "g"]
 		},
 		"Stargreed": {
 			"title": "Someone agrees by way of starring the chat post",
-			"href": 2175,
-			"find": ["(stargreed)", "gi"]
+			"id": 2175,
+			"find": ["(stargreed?)", "gi"]
 		},
 		"zombie": {
 			"title": "Unanswered question (or with answers without upvotes)",
@@ -16,7 +19,7 @@
 			"find": ["(zombie)", "gi"]
 		},
 		"Jamalized": {
-			"title": "Being Jamalized means that Jamal edited your question / answer ",
+			"title": "Jamal being a frantic editor.",
 			"id": 1675,
 			"find": ["(jamalized)", "gi"]
 		},
@@ -26,22 +29,22 @@
 			"find": ["(TSA?)", "g"]
 		},
 		"RSA":{
-			"title": "Real Star Applied (you say it after staring a message with & quot;TS & quot;)",
+			"title": "Real Star Applied (you say it after staring a message with &quot;TS&quot;)",
 			"id": 1514,
 			"find": ["(RSA)", "g"]
 		},
 		"Thanks, Santa!": {
-			"title": "When someone upvotes a post, and you don\"t know who, just say this ",
+			"title": "When someone upvotes a post, and you don't know who, just say this",
 			"id": 1526
 		},
 		"IWNPFETTOLAI": {
-			"title": "I will not provide further explanation than this overly long acronym itself ",
+			"title": "I will not provide further explanation than this overly long acronym itself",
 			"id": 1673
 		},
 		"Monking": {
 			"title": "A greeting to the Monkey doing his monkey-business",
 			"id": 1678,
-			"find": ["(monk(?:ing|ernoon|evening|night))", "gi"]
+			"find": ["(monk(?:ing|(?:er)?noon|evening|night))", "gi"]
 		},
 		"TTQW": {
 			"title": "Time To Quit Work",
@@ -60,20 +63,47 @@
 			"id": 1953
 		},
 		"overengineering": {
-			"title": "A case of when something has become overly - engineered ",
+			"title": "A case of when something has become overly - engineered",
 			"id": 2520
 		},
 		"HOLY CARP": {
 			"title": "Probably HOLY CRAP misspelled",
 			"id": 4928
 		},
-		"Malachi\'d": {
-			"title": "Something amusing or entertaining that hasn\"t been starred yet ",
+		"Malachi'd": {
+			"title": "Something amusing or entertaining that hasn't been starred yet",
 			"id": 1667
 		},
 		"JDQ": {
 			"title": "JavaDeveloper Question",
 			"id": 2053
+		},
+		"RELOAD!": {
+			"title": "A reminder that a new StackDay has begun (UTC 00:00), see The Mission on Meta.CR for more info."
+		},
+		"JAVA": {
+			"title": "Question with the word JAVA (instead of Java) in the title or body, is often an indication that the poster is a beginner and/or that it's a low-quality question. This has led to the separation of JAVA from Java. They are now, at least among the regulars in The 2nd Monitor on Code Review, treated as two entirely different languages.",
+			"id": 2045
+		},
+		"Pimping": {
+			"title": "Posting questions or answers in chat to receive votes from other users.",
+			"id": 1706,
+			"find": ["(pimp(?:ed|ing)?)", "gi"]
+		},
+		"PHPOOP": {
+			"title": "PHP is frequently tagged along with OOP. The contraction of the two gave birth to phpoop. Only in the chatroom, though. (don't you dare actually create that tag!).",
+			"id": 2391
+		},
+		"For some values of": {
+			"title": "Supposed to relate to a broad definition of the value.",
+			"id": 5583
+		},
+		"The Mission": {
+			"title": "An old series of meta posts and community events deployed to help CR stray back onto the path of a successful beta."
+		},
+		"Greetings, programs!": {
+			"title": "Tron, The Lecagy - style of Donald.McLean greeting us. Answer with &quot;Greetings, user&quot;",
+			"find": ["(greetings,? programs?!?)", "gi"]
 		}
 	}
 }
