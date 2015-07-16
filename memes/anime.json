@@ -1,0 +1,12 @@
+{
+	"desc": "Memes used on Anime & Manga.",
+	"meta": "meta.anime.stackexchange.com/",
+	"memes": {
+		"Taisho": {
+			"title": "A bot programmed to post random images in the chatroom every now and again."
+		},
+		"HoiHoi-San": {
+			"title": "A bot programmed to post random images based on user input, has a few toys too."
+		}
+	}
+}

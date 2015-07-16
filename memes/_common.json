@@ -5,16 +5,22 @@
 			"title": "The Stack Exchange Network, the network that houses all the sites on Stack Exchange."
 		},
 		"IIRC": {
-			"title": "If I Recall/Remember Correctly"
+			"title": "If I Recall/Remember Correctly."
 		},
 		"SNR": {
-			"title": "Sonic to Noise Ratio: Determines the ratio of crap-to-quality"
+			"title": "Sonic to Noise Ratio: Determines the ratio of crap-to-quality."
+		},
+		"VTC": {
+			"title": "Vote to Close"
+		},
+		"RBA": {
+			"title": "Removed By Author"
 		},
 		"Teacher's Lounge": {
-			"title": "A moderator only chatroom"
+			"title": "A moderator only chatroom."
 		},
 		"Winter Bash": {
-			"title": "An event that occured during the winter of '14, where users far and wide had"
+			"title": "An event that occured during the winter of '14, where users far and wide had all kinds of silly hats."
 		},
 		"Area 51": {
 			"title": "Stack Exchange's new-site-makerer, responsible for housing requests for new sites."
@@ -23,7 +29,7 @@
 			"title": "Before a beta site can &quot;truly&quot; graduate, they need to receive their site design from SE."
 		},
 		"TWSS": {
-			"title": "That's What She Said"
+			"title": "That's What She Said."
 		},
 		"Unicorns": {
 			"title": "Unicorns are the magically weaponized form of a pony."

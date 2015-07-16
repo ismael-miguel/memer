@@ -114,6 +114,15 @@
 		"rolfl": {
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities."
 		},
+		"Jamal": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+		},
+		"Mat'sMug": {
+			"title": "One of CR's elected moderators."
+		},
+		"SimonAndréForsburg": {
+			"title": "One of CR's elected moderators, owner of Duga."
+		},
 		"Duga": {
 			"title": "A bot programmed by SimonAndrêForsburg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
 		}
