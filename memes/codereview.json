@@ -117,14 +117,17 @@
 		"Jamal": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator."
 		},
+		"200_success": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+		},
 		"Mat'sMug": {
 			"title": "One of CR's elected moderators."
 		},
-		"SimonAndréForsburg": {
+		"SimonAndréForsberg": {
 			"title": "One of CR's elected moderators, owner of Duga."
 		},
 		"Duga": {
-			"title": "A bot programmed by SimonAndrêForsburg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
+			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
 		}
 	}
 }

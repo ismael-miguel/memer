@@ -7,6 +7,12 @@
 		},
 		"HoiHoi-San": {
 			"title": "A bot programmed to post random images based on user input, has a few toys too."
+		},
+		"#post": {
+			"title": "The command to summon @Taisho and force his posting. Use #post with a fruit afterwards ;-)"
+		},
+		"id-req": {
+			"title": "Shorthand for Identification Request."
 		}
 	}
 }
