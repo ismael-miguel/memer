@@ -115,7 +115,8 @@
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities."
 		},
 		"Jamal": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
+			"find": ["(jamal(?!ized?))", "gi"]
 		},
 		"200_success": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator."
