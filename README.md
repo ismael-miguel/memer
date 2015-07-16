@@ -29,19 +29,20 @@ You can open the Javascript file and paste it in your browser's console. Hitting
 <del>Currently, it only works for CodeReview chats, due to the lack of memes for others.</del><br/>
 Each chatroom has it's very own file, with a common file.
 
-A browser extension is planned in the near future, to ease the usage.<br>
+A browser extension <del>is planned in the near future</del> is avaliable in the `chrome` folder, to ease the usage.<br>
 The Javascript file available is already a Greasemonkey-ready file.
 
 ## What file should I use?
 
-You can use the `memer.user.js`. That is the fully working and tested file.
+You can use the `memer.user.js`. That is the fully working and tested file.<br>
+You can install the memer extention, in the `chrome` folder. Only on Chrome, for now.
 
 You also can use the file `memer.next.user.js`, but that one may be broken or has stuff that don't make sense.<br>
 Or not work at all! But it is the latest one, and where we showcase the next updates.
 
 ## To who should I thank for this?
 
-You can all the collaborators in this repository.
+You can thank all the collaborators in this repository.
 
 Also, you can thank the reviewers on [the original question](http://codereview.stackexchange.com/questions/96724/the-2nd-monitor-chatroom-translator).
 
