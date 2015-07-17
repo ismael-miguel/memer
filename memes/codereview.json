@@ -21,7 +21,7 @@
 		"Jamalized": {
 			"title": "Jamal being a frantic editor.",
 			"id": 1675,
-			"find": ["(jamalized)", "gi"]
+			"find": ["(jamalize[ds]?)", "gi"]
 		},
 		"TS": {
 			"title": "Theoretical Star (star it and say &quot;RSA&quot;)",
@@ -96,7 +96,8 @@
 		},
 		"For some values of": {
 			"title": "Supposed to relate to a broad definition of the value.",
-			"id": 5583
+			"id": 5583,
+			"find": ["(for some values? of)", "gi"]
 		},
 		"The Mission": {
 			"title": "An old series of meta posts and community events deployed to help CR stray back onto the path of a successful beta."
@@ -106,7 +107,8 @@
 			"find": ["(greetings,? programs?!?)", "gi"]
 		},
 		"Starwall": {
-			"title": "When a series of chat messages are starred, resembles a wall."
+			"title": "When a series of chat messages are starred, resembles a wall.",
+			"find": ["(starwall)", "gi"]
 		},
 		"'Night!": {
 			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;."
@@ -116,7 +118,7 @@
 		},
 		"Jamal": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
-			"find": ["(jamal(?!ized?))", "gi"]
+			"find": ["(jamal(?!ize[ds]?))", "gi"]
 		},
 		"200_success": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator."
