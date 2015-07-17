@@ -5,7 +5,8 @@
 	},
 	{
 		"name": "common",
-		"file": "_common"
+		"file": "_common",
+		"ignore": true
 	},
 	{
 		"name": "users",
