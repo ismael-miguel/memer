@@ -17,19 +17,19 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
-var REPO = 'https://github.com/ismael-miguel/memer/';
-var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
-var SITES = [
-	  'chat.meta.stackexchange.com'
-	, 'chat.stackexchange.com'
-	, 'chat.stackoverflow.com'
-	, 'chat.serverfault.com'
-	, 'chat.superuser.com'
-	, 'chat.askubuntu.com'
-	];
-if (SITES.indexOf(location.hostname) !== -1)
-{
-	;(function (window, undefined){
+(function (window, undefined){
+	var REPO = 'https://github.com/ismael-miguel/memer/';
+	var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+	var SITES = {//the disabled websites don't have a meme file
+		'chat.meta.stackexchange.com': false,
+		'chat.stackexchange.com': true,
+		'chat.stackoverflow.com': false,
+		'chat.serverfault.com': false,
+		'chat.superuser.com': false,
+		'chat.askubuntu.com': false
+	};
+	if (SITES[location.hostname])
+	{
 		'use strict';
 		//Just in case of jQuery.noConflict();
 		(function($) {
@@ -91,14 +91,6 @@ if (SITES.indexOf(location.hostname) !== -1)
 				}
 			};
 			
-			//this will be where all data is saved
-			var meme_database = {
-				'common': '_common',
-				'memes': SITE
-			};
-			
-			var sources = ['common', 'memes'];
-			
 			var popup = function(html) {
 				//yup, standard way to create the popup
 				popUp(0, 0)
@@ -125,10 +117,10 @@ if (SITES.indexOf(location.hostname) !== -1)
 				})
 				.fail(function(){
 					/*
-					* Yeah, Google Chrome has an easy API, that detects when running as extention
-					* read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
-				   */
-					if(window.chrome && chrome.runtime && chrome.runtime.id)
+					* Yeah, Google Chrome has a really crappy API. That detects when running as extention.
+					* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+				    */
+					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
 					{
 						alert([
 							'Memer error:',
@@ -164,8 +156,46 @@ if (SITES.indexOf(location.hostname) !== -1)
 				});
 			};
 			
-			loader();
+			
+			//this will be where all data is saved
+			var meme_database = {};
+			
+			//where all the sources will be queued
+			var sources = [];
+			
+			
+			$.get(
+				ROOT + '_sources.json')
+				.done(function(data, status) {
+					if(data && (data = $.parseJSON(data)))
+					{
+						for(var i = 0, length = data.length; i < length; i++)
+						{
+							meme_database[data[i].name] = data[i].file.replace(/%SITE%/g,SITE);
+							sources[sources.length] = data[i].name;
+						}
+						loader();
+					}
+				})
+				.fail(function(){
+					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
+					{
+						alert([
+							'Memer error:',
+							'Failed to load _sources.json',
+							'Sadly, Memer can\'t work without that file'
+						].join('\n'));
+					}
+					else
+					{
+						popup([
+							'<h3>Memer error:</h3>',
+							'<p>Failed to load <b>_sources.json</b></p>',
+							'<p>Sadly, Memer can\'t work without that file.</p>'
+						].join(''));
+					}
+				});
 			
 		})(window.jQuery);
-	})(Function('return this')());
-}
+	}
+})(Function('return this')());
