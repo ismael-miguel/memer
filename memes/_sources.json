@@ -6,5 +6,10 @@
 	{
 		"name": "common",
 		"file": "_common"
+	},
+	{
+		"name": "users",
+		"file": "%SITE%.users",
+		"ignore": true
 	}
 ]
