@@ -1,9 +1,15 @@
 // ==UserScript==
 // @name Memer
+// @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
-// @version 0.2
-// @match http://chat.stackexchange.com/rooms/*
-// @match http://chat.stackocerflow.com/rooms/*
+// @version 0.3
+// @match *://chat.meta.stackexchange.com/rooms/*
+// @match *://chat.stackexchange.com/rooms/*
+// @match *://chat.stackoverflow.com/rooms/*
+// @match *://chat.serverfault.com/rooms/*
+// @match *://chat.superuser.com/rooms/*
+// @match *://chat.askubuntu.com/rooms/*
+// @author Ismael Miguel
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
@@ -11,17 +17,26 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
-if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.stackoverflow.com')
-{
-	;(function (window, undefined){
+(function (window, undefined){
+	var REPO = 'https://github.com/ismael-miguel/memer/';
+	var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
+	var SITES = {//the disabled websites don't have a meme file
+		'chat.meta.stackexchange.com': false,
+		'chat.stackexchange.com': true,
+		'chat.stackoverflow.com': false,
+		'chat.serverfault.com': false,
+		'chat.superuser.com': false,
+		'chat.askubuntu.com': false
+	};
+	if (SITES[location.hostname])
+	{
 		'use strict';
 		//Just in case of jQuery.noConflict();
 		(function($) {
-			
-			var REPO = 'https://github.com/ismael-miguel/memer/';
-			var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
-			//Please, StackExchange, give us something decent!
-			//This fixed a bug where another chat plugin would break the matching
+			/*
+			 * Please, StackExchange, give us something decent!
+			 * This fixes a bug where another chat plugin would break the matching
+			*/
 			var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];
 			
 			//avoids creating a global function
@@ -76,14 +91,6 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 				}
 			};
 			
-			//this will be where all data is saved
-			var meme_database = {
-				'common': '_common',
-				'memes': SITE
-			};
-			
-			var sources = ['common', 'memes'];
-			
 			var popup = function(html) {
 				//yup, standard way to create the popup
 				popUp(0, 0)
@@ -109,9 +116,11 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 					}
 				})
 				.fail(function(){
-					//yeah, google chrome has an assy API. detects when running as extention
-					//read http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
-					if(window.chrome && chrome.runtime && chrome.runtime.id)
+					/*
+					* Yeah, Google Chrome has a really crappy API. That detects when running as extention.
+					* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+				    */
+					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
 					{
 						alert([
 							'Memer error:',
@@ -147,8 +156,46 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 				});
 			};
 			
-			loader();
+			
+			//this will be where all data is saved
+			var meme_database = {};
+			
+			//where all the sources will be queued
+			var sources = [];
+			
+			
+			$.get(
+				ROOT + '_sources.json')
+				.done(function(data, status) {
+					if(data && (data = $.parseJSON(data)))
+					{
+						for(var i = 0, length = data.length; i < length; i++)
+						{
+							meme_database[data[i].name] = data[i].file.replace(/%SITE%/g,SITE);
+							sources[sources.length] = data[i].name;
+						}
+						loader();
+					}
+				})
+				.fail(function(){
+					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
+					{
+						alert([
+							'Memer error:',
+							'Failed to load _sources.json',
+							'Sadly, Memer can\'t work without that file'
+						].join('\n'));
+					}
+					else
+					{
+						popup([
+							'<h3>Memer error:</h3>',
+							'<p>Failed to load <b>_sources.json</b></p>',
+							'<p>Sadly, Memer can\'t work without that file.</p>'
+						].join(''));
+					}
+				});
 			
 		})(window.jQuery);
-	})(Function('return this')());
-}
+	}
+})(Function('return this')());
