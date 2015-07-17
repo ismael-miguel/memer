@@ -1,0 +1,10 @@
+[
+	{
+		"name": "memes",
+		"file": "%SITE%"
+	},
+	{
+		"name": "common",
+		"file": "_common"
+	}
+]
