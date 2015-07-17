@@ -1,4 +1,4 @@
-# Memer
+# Memer [![Code Review](http://www.zomis.net/codereview/shield/?qid=96724)](http://codereview.st‌​ackexchange.com/q/96724/53773)
 A meme/jargon translator for [StackExchange chatrooms][sen]
 
 ## The original idea
