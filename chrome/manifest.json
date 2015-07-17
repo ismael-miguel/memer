@@ -13,5 +13,16 @@
 			"http://chat.stackoverflow.com/rooms/*",
 			"https://chat.stackoverflow.com/rooms/*"
 		]
-	}]
+	}],
+	"icons": {
+		"38": "logo_38.png",
+		"48": "logo_48.png"
+	},
+	"page_action": {
+		"default_icon": {
+			"38": "logo_38.png",
+			"48": "logo_48.png"
+		},
+		"default_title": "Memer"
+	}
 }
