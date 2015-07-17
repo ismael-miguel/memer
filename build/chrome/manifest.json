@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Memer",
-	"version": "0.2",
+	"version": "0.4",
 	"description": "Translates memes to hover overs and links",
 	"homepage_url": "http://codereview.stackexchange.com/q/96724/18427",
 	"background": {"page": "background.html"},

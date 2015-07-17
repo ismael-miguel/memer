@@ -2,7 +2,7 @@
 // @name Memer
 // @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
-// @version 0.3
+// @version 0.4
 // @match *://chat.meta.stackexchange.com/rooms/*
 // @match *://chat.stackexchange.com/rooms/*
 // @match *://chat.stackoverflow.com/rooms/*
@@ -107,38 +107,44 @@
 			
 			var loader = function(){
 				var source = sources.shift();
+				
+				source.file = source.file.replace(/%SITE%/g,SITE);
+				
 				$.get(
-					ROOT + meme_database[source] + '.json',
+					ROOT + source.file + '.json',
 					function(data) {
 					if(data && (data = $.parseJSON(data)))
 					{
-						meme_database[source] = data;
+						meme_database[source.name] = data;
 					}
 				})
 				.fail(function(){
-					/*
-					* Yeah, Google Chrome has a really crappy API. That detects when running as extention.
-					* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
-				    */
-					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
+					if(!source.ignore)
 					{
-						alert([
-							'Memer error:',
-							'Failed to load ' + meme_database[source] + '.json',
-							'Visit ' + REPO + ' and check if it is available or provide your own'
-						].join('\n'));
+						/*
+						* Yeah, Google Chrome has a really crappy API. That detects when running as extention.
+						* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+						*/
+						if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
+						{
+							alert([
+								'Memer error:',
+								'Failed to load ' + source.file + '.json',
+								'Visit ' + REPO + ' and check if it is available or provide your own'
+							].join('\n'));
+						}
+						else
+						{
+							popup([ //what an ugly piece of code!
+								'<h3>Memer error:</h3>',
+								'<p>Failed to load <b>' + source.file + '.json</b></p>',
+								'<p>If you are sure your connection is working, head to',
+									' <a href="' + REPO + '">Memer\'s github</a> ',
+								'and provide your meme list.</p>'
+							].join(''));
+						}
 					}
-					else
-					{
-						popup([ //what an ugly piece of code!
-							'<h3>Memer error:</h3>',
-							'<p>Failed to load <b>' + meme_database[source] + '.json</b></p>',
-							'<p>If you are sure your connection is working, head to',
-								' <a href="' + REPO + '">Memer\'s github</a> ',
-							'and provide your meme list.</p>'
-						].join(''));
-					}
-					meme_database[source] = {};
+					meme_database[source.name] = {};
 				}).always(function(){
 					if(sources.length)
 					{
@@ -169,11 +175,7 @@
 				.done(function(data, status) {
 					if(data && (data = $.parseJSON(data)))
 					{
-						for(var i = 0, length = data.length; i < length; i++)
-						{
-							meme_database[data[i].name] = data[i].file.replace(/%SITE%/g,SITE);
-							sources[sources.length] = data[i].name;
-						}
+						sources = data;
 						loader();
 					}
 				})
