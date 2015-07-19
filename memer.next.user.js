@@ -25,13 +25,13 @@
 	var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
 	var SOURCES = ROOT + '_sources.json';
 	var SITES = {
-		//Disabled websites don't have a meme file
-		'chat.meta.stackexchange.com': false,
+		//Re-enabled since I've fixed the popup
+		'chat.meta.stackexchange.com': true,
 		'chat.stackexchange.com': true,
-		'chat.stackoverflow.com': false,
-		'chat.serverfault.com': false,
-		'chat.superuser.com': false,
-		'chat.askubuntu.com': false
+		'chat.stackoverflow.com': true,
+		'chat.serverfault.com': true,
+		'chat.superuser.com': true,
+		'chat.askubuntu.com': true
 	};
 	var DELAY = 5000;
 	var POPUP_WIDTH = 300;
