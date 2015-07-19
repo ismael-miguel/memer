@@ -1,8 +1,9 @@
+/** @preserve
 // ==UserScript==
 // @name Memer
 // @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
-// @version 0.4
+// @version 0.4.5
 // @match *://chat.meta.stackexchange.com/rooms/*
 // @match *://chat.stackexchange.com/rooms/*
 // @match *://chat.stackoverflow.com/rooms/*
@@ -17,10 +18,14 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
+*/
+//check 
 (function (window, undefined){
 	var REPO = 'https://github.com/ismael-miguel/memer/';
 	var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
-	var SITES = {//the disabled websites don't have a meme file
+	var SOURCES = ROOT + '_sources.json';
+	var SITES = {
+		//Disabled websites don't have a meme file
 		'chat.meta.stackexchange.com': false,
 		'chat.stackexchange.com': true,
 		'chat.stackoverflow.com': false,
@@ -28,6 +33,8 @@
 		'chat.superuser.com': false,
 		'chat.askubuntu.com': false
 	};
+	var DELAY = 5000;
+	var POPUP_WIDTH = 300;
 	if (SITES[location.hostname])
 	{
 		'use strict';
@@ -39,7 +46,23 @@
 			*/
 			var SITE = $('head link[rel="shortcut icon"]')[0].href.match(/static.net\/([^\/]+)\//)[1];
 			
-			//avoids creating a global function
+			//Popup with the standard chat style
+			var popup = function(html) {
+				$('body').append([
+						'<div class="popup user-popup" style="left:',
+								((window.innerWidth - POPUP_WIDTH) / 2),
+								'px;top:0px;width:',
+								POPUP_WIDTH,
+								'px;display:block;max-width:',
+								POPUP_WIDTH,
+							'px;">',
+							'<div class="btn-close" onclick="var div=this.parentNode;div.parentNode.removeChild(div);">X</div>',
+							html,
+						'</div>'
+					].join(''));
+			};
+			
+			//Scatters the page for unprocessed messages and processes them
 			var translate = function() {
 				$('#chat .message:not([data-checked="1"])')
 					.attr('data-checked', 1)
@@ -63,9 +86,10 @@
 						$(this).replaceWith(tmp_html.html());
 					});
 	
-				setTimeout(translate, 5000);
+				setTimeout(translate, DELAY);
 			};
 			
+			//Matches the memes and the replaces them with the new link
 			var memerize = function(tmp_html, memes, meta) {
 				for (var meme_name in memes)
 				{
@@ -91,20 +115,7 @@
 				}
 			};
 			
-			var popup = function(html) {
-				//yup, standard way to create the popup
-				popUp(0, 0)
-					.css({
-						'width': 'auto',
-						'maxWidth': 300,
-						'minWidth': 300,
-						'top': 0,
-						'left': (window.innerWidth - 300) / 2
-					})
-					.addClass('user-popup')
-					.append(html);
-			};
-			
+			//Performs all the loading of the files
 			var loader = function(){
 				var source = sources.shift();
 				
@@ -121,28 +132,13 @@
 				.fail(function(){
 					if(!source.ignore)
 					{
-						/*
-						* Yeah, Google Chrome has a really crappy API. That detects when running as extention.
-						* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
-						*/
-						if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
-						{
-							alert([
-								'Memer error:',
-								'Failed to load ' + source.file + '.json',
-								'Visit ' + REPO + ' and check if it is available or provide your own'
-							].join('\n'));
-						}
-						else
-						{
-							popup([ //what an ugly piece of code!
-								'<h3>Memer error:</h3>',
-								'<p>Failed to load <b>' + source.file + '.json</b></p>',
-								'<p>If you are sure your connection is working, head to',
-									' <a href="' + REPO + '">Memer\'s github</a> ',
-								'and provide your meme list.</p>'
-							].join(''));
-						}
+						popup([ //What an ugly piece of code!
+							'<h3>Memer error:</h3>',
+							'<p>Failed to load <b>' + source.file + '.json</b></p>',
+							'<p>If you are sure your connection is working, head to',
+								' <a href="' + REPO + '">Memer\'s github</a> ',
+							'and provide your meme list.</p>'
+						].join(''));
 					}
 					meme_database[source.name] = {};
 				}).always(function(){
@@ -152,51 +148,64 @@
 					}
 					else
 					{
-						//only show when not running as an extention
-						if(!window.chrome && !window.chrome.runtime && !window.chrome.runtime.id)
-						{
-							popup('<h3>Memer:</h3><p>All the files loaded successfully</p>');
-						}
-						setTimeout(translate, 5000);
+						setTimeout(translate, DELAY);
 					}
 				});
 			};
 			
 			
-			//this will be where all data is saved
+			//This will be where all data is saved
 			var meme_database = {};
 			
-			//where all the sources will be queued
-			var sources = [];
+			//Where all the sources will be queued, keep a copy for later
+			var sources = [], loaded_sources = [];
 			
-			
-			$.get(
-				ROOT + '_sources.json')
+			//Initiate all the process, after fetching the sources
+			$.get(SOURCES)
 				.done(function(data, status) {
 					if(data && (data = $.parseJSON(data)))
 					{
 						sources = data;
+						loaded_sources = data;
 						loader();
 					}
 				})
 				.fail(function(){
-					if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
-					{
-						alert([
-							'Memer error:',
-							'Failed to load _sources.json',
-							'Sadly, Memer can\'t work without that file'
-						].join('\n'));
-					}
-					else
-					{
-						popup([
-							'<h3>Memer error:</h3>',
-							'<p>Failed to load <b>_sources.json</b></p>',
-							'<p>Sadly, Memer can\'t work without that file.</p>'
-						].join(''));
-					}
+					popup([
+						'<h3>Memer error:</h3>',
+						'<p>Failed to load <b>_sources.json</b></p>',
+						'<p>Sadly, Memer can\'t work without that file.</p>'
+					].join(''));
 				});
+			/*
+			* Only expose this if we are in Google Chrome and running as extention.
+			* Read: http://stackoverflow.com/questions/7507277/detecting-if-code-is-being-run-as-a-chrome-extension
+			* This will be used for the browser extention
+			*/
+			if(window.chrome && window.chrome.runtime && window.chrome.runtime.id)
+			{
+				window.Memer = {
+					'addSource': function(source) {
+						//yeah, must push into those
+						sources.push(source);
+						loaded_sources.push(source);
+						
+						//defer execution
+						setTimeout(loader(), 0);
+						return true;
+					},
+					'removeSource': function(source){
+						return delete meme_database[source];
+					},
+					'listSources': function() {
+						//return the list of loaded sources, or an empty array
+						return loaded_sources || [];
+					},
+					'listMemes': function(source){
+						return meme_database[source];
+					}
+				};
+			}
 			
 		})(window.jQuery);
 	}
