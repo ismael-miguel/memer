@@ -42,7 +42,7 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 						
 						for(var type in meme_database)
 						{
-							memorize(tmp_html, meme_database[type].memes,meme_database[type].meta);
+							memerize(tmp_html, meme_database[type].memes,meme_database[type].meta);
 						}
 	
 						$(this).replaceWith(tmp_html.html());
@@ -51,7 +51,7 @@ if (location.hostname == 'chat.stackexchange.com' || location.hostname == 'chat.
 				setTimeout(translate, 5000);
 			};
 			
-			var memorize = function(tmp_html, memes, meta) {
+			var memerize = function(tmp_html, memes, meta) {
 				for (var meme_name in memes)
 				{
 					var meme = memes[meme_name];
