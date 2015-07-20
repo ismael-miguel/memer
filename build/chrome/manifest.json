@@ -1,28 +1,42 @@
 {
 	"manifest_version": 2,
 	"name": "Memer",
-	"version": "0.4",
+	"version": "0.5",
 	"description": "Translates memes to hover overs and links",
 	"homepage_url": "http://codereview.stackexchange.com/q/96724/18427",
-	"background": {"page": "background.html"},
 	"content_scripts": [{
 		"js": ["jquery-2.1.4.min.js", "memer.user.js"],
 		"matches": [
+			"http://chat.meta.stackexchange.com/rooms/*",
+			"https://chat.meta.stackexchange.com/rooms/*",
 			"http://chat.stackexchange.com/rooms/*",
 			"https://chat.stackexchange.com/rooms/*",
 			"http://chat.stackoverflow.com/rooms/*",
-			"https://chat.stackoverflow.com/rooms/*"
+			"https://chat.stackoverflow.com/rooms/*",
+			"http://chat.serverfault.com/rooms/*",
+			"https://chat.serverfault.com/rooms/*",
+			"http://chat.superuser.com/rooms/*",
+			"https://chat.superuser.com/rooms/*",
+			"http://chat.askubuntu.com/rooms/*",
+			"https://chat.askubuntu.com/rooms/*"
 		]
 	}],
 	"icons": {
+		"16": "logo_19.png",
 		"38": "logo_38.png",
-		"48": "logo_48.png"
+		"48": "logo_48.png",
+		"64": "logo_64.png",
+		"128": "logo_128.png"
 	},
-	"page_action": {
+	"browser_action": {
 		"default_icon": {
+			"16": "logo_19.png",
 			"38": "logo_38.png",
-			"48": "logo_48.png"
+			"48": "logo_48.png",
+			"64": "logo_64.png",
+			"128": "logo_128.png"
 		},
-		"default_title": "Memer"
+		"default_title": "Memer",
+		"default_popup": "popup.html"
 	}
 }

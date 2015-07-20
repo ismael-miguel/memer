@@ -112,25 +112,6 @@
 		},
 		"'Night!": {
 			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;."
-		},
-		"rolfl": {
-			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities."
-		},
-		"Jamal": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
-			"find": ["(jamal(?!ize[ds]?))", "gi"]
-		},
-		"200_success": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator."
-		},
-		"Mat'sMug": {
-			"title": "One of CR's elected moderators."
-		},
-		"SimonAndréForsberg": {
-			"title": "One of CR's elected moderators, owner of Duga."
-		},
-		"Duga": {
-			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
 		}
 	}
 }
