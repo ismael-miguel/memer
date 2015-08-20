@@ -3,28 +3,28 @@
 	"memes": {
 		"rolfl": {
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities.",
-			"url": "http://codereview.stackexchange.com/users/31503/rolfl"
+			"id": "http://codereview.stackexchange.com/users/31503/rolfl"
 		},
 		"Jamal": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
 			"find": ["(jamal(?!ize[ds]?))", "gi"],
-			"url": "http://codereview.stackexchange.com/users/22222/jamal"
+			"id": "http://codereview.stackexchange.com/users/22222/jamal"
 		},
 		"200_success": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
-			"url": "http://codereview.stackexchange.com/users/9357/200-success"
+			"id": "http://codereview.stackexchange.com/users/9357/200-success"
 		},
 		"Mat'sMug": {
 			"title": "One of CR's elected moderators.",
-			"url": "http://codereview.stackexchange.com/users/23788/mats-mug"
+			"id": "http://codereview.stackexchange.com/users/23788/mats-mug"
 		},
 		"SimonAndréForsberg": {
 			"title": "One of CR's elected moderators, owner of Duga.",
-			"url": "http://codereview.stackexchange.com/users/31562/simon-andr%c3%a9-forsberg"
+			"id": "http://codereview.stackexchange.com/users/31562/simon-andr%c3%a9-forsberg"
 		},
 		"Duga": {
 			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes.",
-			"url": "http://codereview.stackexchange.com/users/51786/duga"
+			"id": "http://codereview.stackexchange.com/users/51786/duga"
 		}
 	}
 }
