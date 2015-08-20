@@ -3,7 +3,7 @@
 // @description Translates memes to hover overs and links
 // @version 0.2
 // @match http://chat.stackexchange.com/rooms/*
-// @match http://chat.stackocerflow.com/rooms/*
+// @match http://chat.stackoverflow.com/rooms/*
 // @authors
 //		-- Ismael Miguel
 //		-- Malachi26
