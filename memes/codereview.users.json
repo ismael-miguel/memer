@@ -1,6 +1,7 @@
 {
 	"desc": "Users present in The 2nd monitor and across the whole CodeReview website",
-	"meta": "codereview.stackexchange.com/users/"
+	"meta": "codereview.stackexchange.com",
+	"list": "http://codereview.stackexchange.com/users/",
 	"memes": {
 		"rolfl": {
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities.",
