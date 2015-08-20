@@ -1,30 +1,31 @@
 {
 	"desc": "Users present in The 2nd monitor and across the whole CodeReview website",
+	"meta": "codereview.stackexchange.com/users/"
 	"memes": {
 		"rolfl": {
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities.",
-			"id": "http://codereview.stackexchange.com/users/31503/rolfl"
+			"id": 31503
 		},
 		"Jamal": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
 			"find": ["(jamal(?!ize[ds]?))", "gi"],
-			"id": "http://codereview.stackexchange.com/users/22222/jamal"
+			"id": 22222
 		},
 		"200_success": {
 			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
-			"id": "http://codereview.stackexchange.com/users/9357/200-success"
+			"id": 9357
 		},
 		"Mat'sMug": {
 			"title": "One of CR's elected moderators.",
-			"id": "http://codereview.stackexchange.com/users/23788/mats-mug"
+			"id": 23788
 		},
 		"SimonAndréForsberg": {
 			"title": "One of CR's elected moderators, owner of Duga.",
-			"id": "http://codereview.stackexchange.com/users/31562/simon-andr%c3%a9-forsberg"
+			"id": 31562
 		},
 		"Duga": {
 			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes.",
-			"id": "http://codereview.stackexchange.com/users/51786/duga"
+			"id": 51786
 		}
 	}
 }
