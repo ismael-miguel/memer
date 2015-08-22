@@ -63,6 +63,15 @@
 		},
 		"Swag": {
 			"title": "Stack Exchange/Overflow related merchandise, formerly available on the SO shop, now limited to events and high-rep users."
+		},
+		"Mod Hammer": {
+			"title": "When a Moderator♦ exercises their binding vote"
+		},
+		"Close Hammer": {
+			"title": "When a casts a vote to close a question or cast a binding vote"
+		},
+		"Dupe Hammer": {
+			"title": "When a person (with a gold tag badge) closes a question as a dupe."
 		}
 	}
 }
