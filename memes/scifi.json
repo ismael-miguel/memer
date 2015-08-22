@@ -1,0 +1,45 @@
+{
+	"desc": "Memes used on Science Fiction & Fantasy.",
+	"meta": "meta.scifi.stackexchange.com/",
+	"memes": {
+		"SFF": {
+			"title": "Shorthand for Science Fiction and Fantasy."
+		},
+		"Time Traveling Robots": {
+			"title": "An Internet troll originally going under the name &quot;Rondo&quot;, asking a bunch of questions about time travelling robots."
+		},
+		"TVTropes": {
+			"title": "A website dedicated to examining tropes in popular media. If you see a TVTropes link, don't follow it or you'll waste half your life in a twisty maze of content."
+		},
+		"Gorilla vs. Shark": {
+			"title": "A phrase to denote the uselessness of arguing questions like 'who would win out X and Y?'"
+		},
+		"id-req": {
+			"title": "Shorthand for Identification Request."
+		},
+		"Because, magic": {
+			"title": "As some of the elements in the fictional series Harry Potter cannot be explained easily, users have resorted to posting the answer: &quot;Because, magic&quot;. Don't you post that as ansswer, ever. Why? Because, magic."
+		},
+		"You are dead to me": {
+			"title": "Anytime someone in chat says or does something that Jack B. Nimble dislikes, Jack declares to the person &quot;you're dead to me&quot;."
+		},
+		"JKR Math": {
+			"title": "Describing any poor math writtne by an SFF author."
+		},
+		"Star Wars physics": {
+			"title": "Describing any poor science written by an SFF author."
+		},
+		"Unicorn Blood": {
+			"title": "In the first Harry Potter book, the antagonist Voldemort drinks the blood of a unicorn to keep himself alive."
+		},
+		"crap": {
+			"title": "Saying 'crap' gets stars in chat."
+		},
+		"Dead Fish of Jack B Nimble": {
+			"title": "Once upon a time Jack B Nimble had an aquarium. It was not a very successful aquarium, and it had a high death rate."
+		},
+		"Toad Slime": {
+			"title": ""
+		}
+	}
+}
