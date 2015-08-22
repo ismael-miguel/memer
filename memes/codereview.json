@@ -6,7 +6,7 @@
 		"BTW." : {
 			"title": "Backronymizing btw, by way of BTW Enum (BTW.Normal means &quot;By The Way&quot;)",
 			"id" : 1646,
-			"find": ["(BTW\\.[a-zA-Z]+)", "g"]
+			"find": ["(btw\\..+)", "gi"]
 		},
 		"Stargreed": {
 			"title": "Someone agrees by way of starring the chat post",
