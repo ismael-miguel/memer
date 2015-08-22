@@ -1,4 +1,4 @@
-# Memer
+# Memer [![Code Review](http://www.zomis.net/codereview/shield/?qid=96724)](http://codereview.stackexchange.com/q/96724/53773)
 A meme/jargon translator for [StackExchange chatrooms][sen]
 
 ## The original idea
@@ -27,16 +27,15 @@ The links are simple match-and-replace made on text. This avoids re-matching an 
 [Click here][userscript_installer] to install the Userscript,  
 or you can open the Javascript file and paste it in your browser's console. Hitting <kbd>F12</kbd> will open the console for you.
 
-<del>Currently, it only works for CodeReview chats, due to the lack of memes for others.</del>  
 Each chatroom has it's very own file, with a common file.
 
-A browser extension <del>is planned in the near future</del> is avaliable in the `chrome` folder, to ease the usage.  
+A browser extension is available in the `chrome` folder, to ease the usage.  
 The Javascript file available is already a Greasemonkey-ready file.
 
 ## What file should I use?
 
 You can use the `memer.user.js`. That is the fully working and tested file.  
-You can install the memer extention, in the `chrome` folder. Only on Chrome, for now.
+You can install the memer extension, in the `chrome` folder. Only on Chrome, for now.
 
 You also can use the file `memer.next.user.js`, but that one may be broken or has stuff that don't make sense.  
 Or not work at all! But it is the latest one, and where we showcase the next updates.
