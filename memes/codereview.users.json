@@ -4,29 +4,35 @@
 	"list": "http://codereview.stackexchange.com/users/",
 	"memes": {
 		"rolfl": {
-			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities.",
+			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities",
 			"id": 31503
 		},
 		"Jamal": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
+			"title": "One of CR's former pro-tem mods, and a current elected moderator",
 			"find": ["(jamal(?!ize[ds]?))", "gi"],
 			"id": 22222
 		},
 		"200_success": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
+			"title": "One of CR's former pro-tem mods, and a current elected moderator",
 			"id": 9357
 		},
 		"Mat'sMug": {
-			"title": "One of CR's elected moderators.",
+			"title": "One of CR's elected moderators",
 			"id": 23788
 		},
 		"SimonAndréForsberg": {
-			"title": "One of CR's elected moderators, owner of Duga.",
+			"title": "One of CR's elected moderators, owner of Duga",
 			"id": 31562
 		},
 		"Duga": {
-			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes.",
+			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes",
 			"id": 51786
+		},
+		"Captain Obvious": {
+			"title": "A feed that relays all the new questions posted on Code Review"
+		},
+		"IsmaelMiguel": {
+			"title": "The creator of Memer"
 		}
 	}
 }

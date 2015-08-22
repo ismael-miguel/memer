@@ -95,27 +95,27 @@
 			"id": 2391
 		},
 		"For some values of": {
-			"title": "Supposed to relate to a broad definition of the value.",
+			"title": "Supposed to relate to a broad definition of the value",
 			"id": 5583,
 			"find": ["(for some values? of)", "gi"]
 		},
 		"The Mission": {
-			"title": "An old series of meta posts and community events deployed to help CR back onto the path of a successful beta."
+			"title": "An old series of meta posts and community events deployed to help CR back onto the path of a successful beta"
 		},
 		"Greetings, programs!": {
-			"title": "Donald.McLean's Tron-style greeting. Answer with &quot;Greetings, user&quot; or, &quot;Greetings, Stargazer&quot;.",
+			"title": "Donald.McLean's Tron-style greeting. Answer with &quot;Greetings, user&quot; or, &quot;Greetings, Stargazer&quot;",
 			"find": ["(greetings,? programs?!?)", "gi"]
 		},
 		"Starwall": {
-			"title": "When a series of chat messages are starred, resembles a wall.",
+			"title": "When a series of chat messages are starred, resembles a wall",
 			"find": ["(starwall)", "gi"]
 		},
 		"'Night!": {
-			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;.",
+			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;",
 			"find": ["('night)", "gi"]
 		},
 		"Nth Monitor": {
-			"title": "When your messages dissolve into noise instead of sonic, they might me moved here. If that happens, you may want to slow down and consider what you're typing."
+			"title": "When your messages dissolve into noise instead of sonic, they might me moved here. If that happens, you may want to slow down and consider what you're typing"
 		}
 	}
 }
