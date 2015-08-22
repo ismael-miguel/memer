@@ -95,8 +95,7 @@
                     var find = meme.find
                     ? new RegExp(meme.find[0], meme.find[1])
                     : new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
-                    if (typeof meta !== "undefined")
-                    {
+                    if (typeof meta !== "undefined") {
                         var isMainSite = meta.indexOf('meta') == -1;
                         if (isMainSite) {
                             var replace = [
@@ -115,6 +114,14 @@
                                 '" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
                             ].join('');
                         }
+                    } else {
+                        var replace = [
+                                '<a href="',
+                                meta && meme.id? '//' + meta + '/a/' + meme.id : 'javascript:void(0)',
+                                '" title="',
+                                meme.title,
+                                '" style="border-bottom:1px dashed #000;color:#000;">$1</a>'
+                            ].join('');
                     }
 
                     $(tmp_html).contents().each(function() {
