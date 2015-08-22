@@ -34,7 +34,7 @@
 			"find": ["(RSA)", "g"]
 		},
 		"Thanks, Santa!": {
-			"title": "When someone upvotes a post, and you don't know who, just say this",
+			"title": "When someone upvotes a post, and you think they may be in the chatroom, just say this and they'll understand your thanks.",
 			"id": 1526
 		},
 		"IWNPFETTOLAI": {
@@ -86,7 +86,7 @@
 			"id": 2045
 		},
 		"Pimping": {
-			"title": "Posting questions or answers in chat to receive votes from other users. Related to MTV's Pimp My Car.",
+			"title": "Posting questions or answers in chat to receive votes from other users. Related to MTV's Pimp My Ride.",
 			"id": 1706,
 			"find": ["(pimp(?:ed|ing)?)", "gi"]
 		},
@@ -100,7 +100,7 @@
 			"find": ["(for some values? of)", "gi"]
 		},
 		"The Mission": {
-			"title": "An old series of meta posts and community events deployed to help CR stray back onto the path of a successful beta."
+			"title": "An old series of meta posts and community events deployed to help CR back onto the path of a successful beta."
 		},
 		"Greetings, programs!": {
 			"title": "Donald.McLean's Tron-style greeting. Answer with &quot;Greetings, user&quot; or, &quot;Greetings, Stargazer&quot;.",
@@ -111,7 +111,11 @@
 			"find": ["(starwall)", "gi"]
 		},
 		"'Night!": {
-			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;."
+			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;.",
+			"find": ["('night)", "gi"]
+		},
+		"Nth Monitor": {
+			"title": "When your messages dissolve into noise instead of sonic, they might me moved here. If that happens, you may want to slow down and consider what you're typing."
 		}
 	}
 }

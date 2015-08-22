@@ -4,6 +4,12 @@
 		"SEN": {
 			"title": "The Stack Exchange Network, the network that houses all the sites on Stack Exchange."
 		},
+		"SEDE": {
+			"title": "The Stack Exchange Data Explorer, an integrated SQL client equipped with access to site data and graphing tools. Resets StackSundays."
+		},
+		"StackDay": {
+			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC."
+		},
 		"IIRC": {
 			"title": "If I Recall/Remember Correctly."
 		},
@@ -54,6 +60,9 @@
 		},
 		"TLA": {
 			"title": "Terribly lazy answer."
+		},
+		"Swag": {
+			"title": "Stack Exchange/Overflow related merchandise, formerly available on the SO shop, now limited to events and high-rep users."
 		}
 	}
 }
