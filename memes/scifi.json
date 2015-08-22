@@ -27,7 +27,8 @@
 			"title": "Describing any poor math writtne by an SFF author"
 		},
 		"Star Wars physics": {
-			"title": "Describing any poor science written by an SFF author"
+			"title": "Describing any poor science written by an SFF author",
+			"find": ["((?:star wars|lucas) physics?)", "gi"]
 		},
 		"Unicorn Blood": {
 			"title": "In the first Harry Potter book, the antagonist Voldemort drinks the blood of a unicorn to keep himself alive"
