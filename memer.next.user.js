@@ -3,7 +3,7 @@
 // @name Memer
 // @namespace https://github.com/ismael-miguel/memer
 // @description Translates memes to hover overs and links
-// @version 0.4.6
+// @version 0.4.7
 // @match *://chat.meta.stackexchange.com/rooms/*
 // @match *://chat.stackexchange.com/rooms/*
 // @match *://chat.stackoverflow.com/rooms/*
