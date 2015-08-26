@@ -29,10 +29,8 @@
 			"id": 51786
 		},
 		"Captain Obvious": {
-			"title": "A feed that relays all the new questions posted on Code Review"
-		},
-		"CaptainObvious": {
-			"title": "A feed that relays all the new questions posted on Code Review"
+			"title": "A feed that relays all the new questions posted on Code Review",
+			"find": ["(Captain ?Obvious)", "gi"]
 		},
 		"IsmaelMiguel": {
 			"title": "The creator of Memer",
