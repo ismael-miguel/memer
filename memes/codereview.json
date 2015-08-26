@@ -112,7 +112,7 @@
 		},
 		"'Night!": {
 			"title": "A user's admission of weakness, the correct message should say: &quot;I'll do one more code review&quot;",
-			"find": ["('night)", "gi"]
+			"find": ["('night\\!)", "gi"]
 		},
 		"Nth Monitor": {
 			"title": "When your messages dissolve into noise instead of sonic, they might me moved here. If that happens, you may want to slow down and consider what you're typing"
