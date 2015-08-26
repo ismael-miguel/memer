@@ -18,7 +18,8 @@
 			"find": ["(mse)", "gi"]
 		},
 		"StackDay": {
-			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC"
+			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC",
+			"find": ["(stack((mon|tues|wednes|thurs|fri|satur|sun)day|day|morning|afternoon|night))", "gi"]
 		},
 		"IIRC": {
 			"title": "If I Recall/Remember Correctly"
@@ -59,10 +60,6 @@
 			"title": "Everyone's favourite four-legged animal!",
 			"find": ["(ponies)", "gi"]
 		},
-		"Jon Skeet": {
-			"title": "The top user on Stack Overflow, who can rep cap every day without needing to visit",
-			"find": ["(jon skeet)", "gi"]
-		},
 		"Needs more jQuery": {
 			"title": "When your implementation simply needs more jQuery to be better"
 		},
@@ -88,7 +85,7 @@
 		},
 		"Mod": {
 			"title": "A moderator.",
-			"find": ["(mod)", "gi"]
+			"find": ["(mod(?![ hammer]))", "gi"]
 		},
 		"Close Hammer": {
 			"title": "When a user casts a vote to close a question or cast a binding vote",
@@ -100,7 +97,7 @@
 		},
 		"Dupe": {
 			"title": "A duplicate post.",
-			"find": ["(dupe)", "gi"]
+			"find": ["(dupe(?![ hammer]))", "gi"]
 		}
 	}
 }

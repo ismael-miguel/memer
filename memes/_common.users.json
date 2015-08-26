@@ -1,8 +1,21 @@
 {
-	"desc":"List of famous users all over the StackExchange Network",
+	"desc": "List of famous users all over the StackExchange Network",
 	"memes": {
 		"Jon Skeet": {
-			"title": "The top user on Stack Overflow, who can rep cap every day without needing to visit"
+			"title": "The top user on Stack Overflow, who can rep cap every day without needing to visit",
+			"find": ["(jon skeet)", "gi"]
+		},
+		"Abby Hairboat": {
+			"title": "A Stack Exchange staff member",
+			"find": ["(abby hairboat)", "gi"]
+		},
+		"Tim Post": {
+			"title": "A Stack Exchange staff member",
+			"find": ["(tim post)", "gi"]
+		},
+		"Eric Lippert": {
+			"title": "A user that answers a lot of C# questions on Stack Overflow",
+			"find": ["(eric lippert)", "gi"]
 		}
 	}
 }
