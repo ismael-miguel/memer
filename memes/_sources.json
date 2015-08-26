@@ -9,6 +9,11 @@
 		"ignore": true
 	},
 	{
+		"name": "common.users",
+		"file": "_common.users",
+		"ignore": true
+	},
+	{
 		"name": "users",
 		"file": "%SITE%.users",
 		"ignore": true
