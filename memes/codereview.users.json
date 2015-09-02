@@ -18,7 +18,7 @@
 			"id": 9357
 		},
 		"Mat'sMug": {
-			"find": ["(mat'smug)","gi"],
+			"find": ["(mat''smug)","gi"],
 			"title": "One of CR's elected moderators",
 			"id": 23788
 		},
@@ -31,9 +31,7 @@
 			"id": 51786
 		},
 		"Captain Obvious": {
-			"title": "A feed that relays all the new questions posted on Code Review"
-		},
-		"CaptainObvious": {
+			"find": ["(@?captainobvious)","gi"],
 			"title": "A feed that relays all the new questions posted on Code Review"
 		},
 		"IsmaelMiguel": {
