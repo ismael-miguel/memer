@@ -4,6 +4,7 @@
 	"list": "http://codereview.stackexchange.com/users/",
 	"memes": {
 		"rolfl": {
+			"find":["(rolfl)","gi"],
 			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities",
 			"id": 31503
 		},
@@ -17,6 +18,7 @@
 			"id": 9357
 		},
 		"Mat'sMug": {
+			"find": ["(mat'smug)","gi"],
 			"title": "One of CR's elected moderators",
 			"id": 23788
 		},
@@ -39,6 +41,7 @@
 			"id": 53773
 		},
 		"Malachi": {
+			"find" : ["(malachi)","gi"],
 			"title": "Revivalist specializing in C#, SQL Server, VB, JavaScript, HTML, CSS",
 			"id": 18427
 		}
