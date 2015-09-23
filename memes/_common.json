@@ -98,6 +98,10 @@
 		"Dupe": {
 			"title": "A duplicate post.",
 			"find": ["(dupe(?![ hammer]))", "gi"]
+		},
+		"FGITW": {
+			"title": "Syndrome created by SO where an answerer tries to be the first to answer in hopes of getting lots of upvotes.",
+			"find": ["(fgitw)", "gi"]
 		}
 	}
 }
