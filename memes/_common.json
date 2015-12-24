@@ -8,16 +8,14 @@
 			"title": "The Stack Exchange Data Explorer, an integrated SQL client equipped with access to site data and graphing tools. Resets StackSundays"
 		},
 		"SO": {
-			"title": "Stack Overflow",
-            "find": ["( SO )", "gi"]
+			"title": "Stack Overflow"
 		},
 		"SU": {
-			"title": "Super User",
-			"find": ["( su )", "gi"]
+			"title": "Super User"
 		},
 		"MSE": {
 			"title": "Meta Stack Exchange",
-			"find": ["( mse )", "gi"]
+			"find": ["(mse)", "gi"]
 		},
 		"StackDay": {
 			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC",
@@ -87,7 +85,7 @@
 		},
 		"Mod": {
 			"title": "A moderator.",
-			"find": ["( mod(?![ hammer]))", "gi"]
+			"find": ["(mod(?![ hammer]))", "gi"]
 		},
 		"Close Hammer": {
 			"title": "When a user casts a vote to close a question or cast a binding vote",
