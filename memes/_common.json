@@ -8,14 +8,16 @@
 			"title": "The Stack Exchange Data Explorer, an integrated SQL client equipped with access to site data and graphing tools. Resets StackSundays"
 		},
 		"SO": {
-			"title": "Stack Overflow"
+			"title": "Stack Overflow",
+            "find": ["( SO )", "gi"]
 		},
 		"SU": {
-			"title": "Super User"
+			"title": "Super User",
+			"find": ["( su )", "gi"]
 		},
 		"MSE": {
 			"title": "Meta Stack Exchange",
-			"find": ["(mse)", "gi"]
+			"find": ["( mse )", "gi"]
 		},
 		"StackDay": {
 			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC",
@@ -40,8 +42,8 @@
 			"title": "A moderator only chatroom"
 		},
 		"Winter Bash": {
-			"title": "An event that occured during the winter of '14, where users far and wide had all kinds of silly hats",
-			"find": ["(winter bash)", "gi"]
+			"title": "An event that occured during the winter season, where users far and wide can achieve all kinds of silly hats",
+			"find": ["(winterbash|winter bash|wb)", "gi"]
 		},
 		"Area 51": {
 			"title": "Stack Exchange's new-site-factory, responsible for housing requests for new sites"
@@ -85,7 +87,7 @@
 		},
 		"Mod": {
 			"title": "A moderator.",
-			"find": ["(mod(?![ hammer]))", "gi"]
+			"find": ["( mod(?![ hammer]))", "gi"]
 		},
 		"Close Hammer": {
 			"title": "When a user casts a vote to close a question or cast a binding vote",
