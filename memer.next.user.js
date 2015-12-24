@@ -7,7 +7,7 @@
 // @match *://chat.meta.stackexchange.com/rooms/*
 // @match *://chat.stackexchange.com/rooms/*
 // @match *://chat.stackoverflow.com/rooms/*
-// @match *://chat.serverfault.com/rooms/*
+// @match *://chat.serverfault.com/rooms/*`
 // @match *://chat.superuser.com/rooms/*
 // @match *://chat.askubuntu.com/rooms/*
 // @author Ismael Miguel
@@ -20,7 +20,7 @@
 // ==/UserScript==
 */
 //check 
-(function (window, undefined){
+(function (window){
     var REPO = 'https://github.com/ismael-miguel/memer/';
     var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/memer/master/memes/';
     var SOURCES = ROOT + '_sources.json';
@@ -76,10 +76,9 @@
                     var tmp_html = $('<div>');
                     tmp_html.text(this.nodeValue);
 
-                    for(var type in meme_database)
-                    {
-                        memerize(tmp_html, meme_database[type].memes,meme_database[type].meta);
-                    }
+                    Object.keys(meme_database).forEach(function(type){
+                        memerize(tmp_html, meme_database[type].memes, meme_database[type].meta);
+                    });
 
                     $(this).replaceWith(tmp_html.html());
                 });
@@ -92,13 +91,14 @@
                 for (var meme_name in memes)
                 {
                     var meme = memes[meme_name];
+                    var replace = "";
                     var find = meme.find
                     ? new RegExp(meme.find[0], meme.find[1])
                     : new RegExp('(' + (meme_name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')) + ')', 'g');
                     if (typeof meta !== "undefined") {
                         var isMainSite = meta.indexOf('meta') == -1;
                         if (isMainSite) {
-                            var replace = [
+                            replace = [
                                 '<a href="',
                                 meta && meme.id? '//' + meta + '/users/' + meme.id : 'javascript:void(0)',
                                 '" title="',
@@ -106,7 +106,7 @@
                                 '" style="border-bottom:1px groove silver;color:#000;">$1</a>'
                             ].join('');    
                         } else {
-                            var replace = [
+                            replace = [
                                 '<a href="',
                                 meta && meme.id? '//' + meta + '/a/' + meme.id : 'javascript:void(0)',
                                 '" title="',
@@ -115,7 +115,7 @@
                             ].join('');
                         }
                     } else {
-                        var replace = [
+                        replace = [
                                 '<a href="',
                                 meta && meme.id? '//' + meta + '/a/' + meme.id : 'javascript:void(0)',
                                 '" title="',
@@ -155,19 +155,16 @@
                             '<h3>Memer error:</h3>',
                             '<p>Failed to load <b>' + source.file + '.json</b></p>',
                             '<p>If you are sure your connection is working, head to',
-                            ' <a href="' + REPO + '">Memer\'s github</a> ',
+                            '<a href="' + REPO + '">Memer\'s github</a> ',
                             'and provide your meme list.</p>'
                         ].join(''));
                     }
                     meme_database[source.name] = {};
                 }).always(function(){
-                    if(sources.length)
-                    {
-                        setTimeout(loader, 0);
-                    }
-                    else
-                    {
-                        setTimeout(translate, DELAY);
+                    if (sources.length){
+                        setTimeout(loader, translate);
+                    } else {
+                        setTimeout(0, DELAY);
                     }
                 });
             };
@@ -225,7 +222,6 @@
                     }
                 };
             }
-
         })(window.jQuery);
     }
 })(Function('return this')());

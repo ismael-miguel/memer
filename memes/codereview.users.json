@@ -22,7 +22,7 @@
 			"title": "One of CR's elected moderators",
 			"id": 23788
 		},
-		"SimonAndréForsberg": {
+		"SimonForsberg": {
 			"title": "One of CR's elected moderators, owner of Duga",
 			"id": 31562
 		},
@@ -34,9 +34,24 @@
 			"find": ["(@?captainobvious)","gi"],
 			"title": "A feed that relays all the new questions posted on Code Review"
 		},
+        "RoboSanta": {
+			"title": "A bot that posts notable questions posted on Code Review"
+		},
 		"IsmaelMiguel": {
 			"title": "The creator of Memer",
 			"id": 53773
+		},
+        "Phrancis": {
+			"title": "Room owner of The 2nd Monitor and The Nth Monitor",
+			"id": 42632
+		},
+        "DanPantry": {
+			"title": "Room owner of The 2nd Monitor and The Nth Monitor",
+			"id": 42325
+		},
+        "Quill": {
+			"title": "Room owner of The Nth Monitor and collaborator on Memer",
+			"id": 62429
 		},
 		"Malachi": {
 			"find" : ["(malachi)","gi"],

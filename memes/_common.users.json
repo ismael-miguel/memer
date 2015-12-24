@@ -16,6 +16,18 @@
 		"Eric Lippert": {
 			"title": "A user that answers a lot of C# questions on Stack Overflow",
 			"find": ["(eric lippert)", "gi"]
+		},
+        "Pops": {
+			"title": "A Stack Exchange staff member",
+			"find": ["(pops)", "gi"]
+		},
+        "Jon Ericsson": {
+			"title": "A Stack Exchange staff member",
+			"find": ["(jon ericsson)", "gi"]
+		},
+        "Shog9": {
+			"title": "A Stack Exchange staff member",
+			"find": ["(shog9)", "gi"]
 		}
 	}
 }

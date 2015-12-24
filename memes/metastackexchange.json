@@ -1,0 +1,9 @@
+{
+	"desc": "Meta Stack Exchange",
+	"meta": "meta..stackexchange.com",
+	"memes": {
+        "sd": {
+            "title": "A command used by privileged users to interact with SmokeDetector."
+        }
+	}
+}
