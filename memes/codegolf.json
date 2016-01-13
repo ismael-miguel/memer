@@ -27,7 +27,7 @@
         },
         "Code Review": {
             "title": "PPCG's rival site, and seeimingly their ideological antagonist.",
-			"find": [" (C(ode Review|R) ", "gi"]
+			"find": ["( (C(ode Review|R) )", "gi"]
         },
         "Carrots": {
             "title": "Not the \"wassup doc?\" kind, but the ^ kind."
