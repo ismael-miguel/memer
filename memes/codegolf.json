@@ -32,7 +32,7 @@
 		},
 		"Carrots": {
 			"title": "Not the &quot;wassup doc?&quot; kind, but the ^ kind.",
-			"find": ["carrots", "gi"]
+			"find": ["(carrots)", "gi"]
 		},
 		"Jimmy": {
 			"title": "A sad story of peer pressure and self-identity."
