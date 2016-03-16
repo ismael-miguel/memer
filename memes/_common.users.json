@@ -78,13 +78,13 @@
 		"IsmaelMiguel": {
 			"title": "The creator of Memer"
 		},
-        "PinCrash": {
+		"PinCrash": {
 			"title": "Room owner of The 2nd Monitor and The Nth Monitor"
 		},
-        "DanPantry": {
+        	"DanPantry": {
 			"title": "Room owner of The Nth Monitor"
 		},
-        "Quill": {
+        	"Quill": {
 			"title": "Room owner of The Nth Monitor and collaborator on Memer",
 			"find" : ["(quill)","gi"],
 		},
