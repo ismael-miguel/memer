@@ -1,5 +1,5 @@
 {
-	"desc": "List of famous users all over the StackExchange Network",
+	"desc": "List of notable users all over the StackExchange Network",
 	"memes": {
 		"Jon Skeet": {
 			"title": "The top user on Stack Overflow, who can rep cap every day without needing to visit",
@@ -17,17 +17,80 @@
 			"title": "A user that answers a lot of C# questions on Stack Overflow",
 			"find": ["(eric lippert)", "gi"]
 		},
-        "Pops": {
+		"Pops": {
 			"title": "A Stack Exchange staff member",
 			"find": ["(pops)", "gi"]
 		},
-        "Jon Ericsson": {
+		"Jon Ericsson": {
 			"title": "A Stack Exchange staff member",
 			"find": ["(jon ericsson)", "gi"]
 		},
-        "Shog9": {
+		"Shog9": {
 			"title": "A Stack Exchange staff member",
 			"find": ["(shog9)", "gi"]
+		},
+		"Doorknob": {
+			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		},
+		"Dennis": {
+			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		},
+		"AlexA.": {
+			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		},
+		"@ChrisJester-Young": {
+			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		},
+		"MartinBüttner": {
+			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		},
+		"SmokeDetector": {
+			"title": "A bot who watches incoming questions for possible spam"
+		},
+		"rolfl": {
+			"find":["(rolfl)","gi"],
+			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities"
+		},
+		"Jamal": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator",
+			"find": ["(jamal(?!ize[ds]?))", "gi"]
+		},
+		"200_success": {
+			"title": "One of CR's former pro-tem mods, and a current elected moderator"
+		},
+		"Mat'sMug": {
+			"find": ["(matsmug)","gi"],
+			"title": "One of CR's elected moderators"
+		},
+		"SimonForsberg": {
+			"title": "One of CR's elected moderators, owner of Duga"
+		},
+		"Duga": {
+			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes",
+		},
+		"Captain Obvious": {
+			"find": ["(@?captainobvious)","gi"],
+			"title": "A feed that relays all the new questions posted on Code Review"
+		},
+        "RoboSanta": {
+			"title": "A bot that posts notable questions posted on Code Review"
+		},
+		"IsmaelMiguel": {
+			"title": "The creator of Memer"
+		},
+        "PinCrash": {
+			"title": "Room owner of The 2nd Monitor and The Nth Monitor"
+		},
+        "DanPantry": {
+			"title": "Room owner of The Nth Monitor"
+		},
+        "Quill": {
+			"title": "Room owner of The Nth Monitor and collaborator on Memer",
+			"find" : ["(quill)","gi"],
+		},
+		"Malachi": {
+			"find" : ["(malachi)","gi"],
+			"title": "CodeReview revivalist specializing in C#, SQL Server, VB, JavaScript, HTML, CSS"
 		}
 	}
 }
