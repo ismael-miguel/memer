@@ -72,7 +72,7 @@
 			"find": ["(@?captainobvious)","gi"],
 			"title": "A feed that relays all the new questions posted on Code Review"
 		},
-        "RoboSanta": {
+		"RoboSanta": {
 			"title": "A bot that posts notable questions posted on Code Review"
 		},
 		"IsmaelMiguel": {
