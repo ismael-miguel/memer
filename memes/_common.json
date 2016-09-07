@@ -2,58 +2,102 @@
 	"desc":"List of common memes/acronyms used all over the chat/internet",
 	"memes": {
 		"SEN": {
-			"title": "The Stack Exchange Network, the network that houses all the sites on Stack Exchange."
+			"title": "The Stack Exchange Network, the network that houses all the sites on Stack Exchange"
+		},
+		"SEDE": {
+			"title": "The Stack Exchange Data Explorer, an integrated SQL client equipped with access to site data and graphing tools. Resets StackSundays"
+		},
+		"SO": {
+			"title": "Stack Overflow"
+		},
+		"SU": {
+			"title": "Super User"
+		},
+		"MSE": {
+			"title": "Meta Stack Exchange",
+			"find": ["(mse)", "gi"]
+		},
+		"StackDay": {
+			"title": "When the time strikes UTC midnight, the rep cap, votes, flags and stars reset. A &quot;new&quot; StackDay is defined as UTC midnight. So, Stack(Afternoon, Night, Morning) are just the times in UTC",
+			"find": ["(stack((mon|tues|wednes|thurs|fri|satur|sun)day|day|morning|afternoon|night))", "gi"]
 		},
 		"IIRC": {
-			"title": "If I Recall/Remember Correctly."
+			"title": "If I Recall/Remember Correctly"
 		},
 		"SNR": {
-			"title": "Sonic to Noise Ratio: Determines the ratio of crap-to-quality."
+			"title": "Sonic to Noise Ratio: Determines the ratio of crap-to-quality",
+			"find": ["(snr)", "gi"]
 		},
 		"VTC": {
-			"title": "Vote to Close"
+			"title": "Vote to Close",
+			"find": ["(vtc)", "gi"]
 		},
 		"RBA": {
-			"title": "Removed By Author"
+			"title": "Removed By Author",
+			"find": ["(rba)", "gi"]
 		},
 		"Teacher's Lounge": {
-			"title": "A moderator only chatroom."
+			"title": "A moderator only chatroom"
 		},
 		"Winter Bash": {
-			"title": "An event that occured during the winter of '14, where users far and wide had all kinds of silly hats."
+			"title": "An event that occured during the winter season, where users far and wide can achieve all kinds of silly hats",
+			"find": ["(winterbash|winter bash|wb)", "gi"]
 		},
 		"Area 51": {
-			"title": "Stack Exchange's new-site-makerer, responsible for housing requests for new sites."
+			"title": "Stack Exchange's new-site-factory, responsible for housing requests for new sites"
 		},
 		"waiting for design": {
-			"title": "Before a beta site can &quot;truly&quot; graduate, they need to receive their site design from SE."
+			"title": "Before a beta site can &quot;truly&quot; graduate, they need to receive their site design from SE"
 		},
 		"TWSS": {
-			"title": "That's What She Said."
+			"title": "That's What She Said"
 		},
 		"Unicorns": {
-			"title": "Unicorns are the magically weaponized form of a pony."
+			"title": "Unicorns are the magically weaponized form of a pony",
+			"find": ["(unicorns)", "gi"]
 		},
 		"Ponies": {
-			"title": "Everyone's favourite four-legged animal!"
-		},
-		"Jon Skeet": {
-			"title": "The top user on Stack Overflow, who can rep cap every day without needing to visit."
+			"title": "Everyone's favourite four-legged animal!",
+			"find": ["(ponies)", "gi"]
 		},
 		"Needs more jQuery": {
-			"title": "When your implementation simply needs more jQuery to be better."
+			"title": "When your implementation simply needs more jQuery to be better"
 		},
 		"6 to 8 weeks": {
-			"title": "The time estimate given &quot;off the top of my head&quot; when the Stack Exchange team has only a vague idea of how long a task will take because they have little-to-no formal scheduling or even a list of tasks."
+			"title": "The time estimate given &quot;off the top of my head&quot; when the Stack Exchange team has only a vague idea of how long a task will take because they have little-to-no formal scheduling or even a list of tasks"
 		},
 		"Burninated": {
-			"title": "Used in reference to deleting a tag from the system."
+			"title": "Used in reference to deleting a tag from the system"
 		},
 		"Caching": {
-			"title": "Don't treat this text as true, caching is to blame."
+			"title": "Don't treat this text as true, caching is to blame"
 		},
 		"TLA": {
-			"title": "Terribly lazy answer."
+			"title": "Terribly lazy answer"
+		},
+		"Swag": {
+			"title": "Stack Exchange/Overflow related merchandise, formerly available on the SO shop, now limited to events and high-rep users",
+			"find": ["(swag)", "gi"]
+		},
+		"Mod Hammer": {
+			"title": "When a Moderator♦ exercises their binding vote",
+			"find": ["(mod hammer)", "gi"]
+		},
+		"Mod": {
+			"title": "A moderator.",
+			"find": ["(mod(?![ hammer]))", "gi"]
+		},
+		"Close Hammer": {
+			"title": "When a user casts a vote to close a question or cast a binding vote",
+			"find": ["(close hammer)", "gi"]
+		},
+		"Dupe Hammer": {
+			"title": "When a person (with a gold tag badge) closes a question as a dupe",
+			"find": ["(dupe hammer)", "gi"]
+		},
+		"Dupe": {
+			"title": "A duplicate post.",
+			"find": ["(dupe(?![ hammer]))", "gi"]
 		}
 	}
 }

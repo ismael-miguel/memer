@@ -1,8 +1,44 @@
 {
 	"desc": "After asking on The Nineteenth Byte, I've concluded that there's no data.",
 	"memes": {
-		"Doorknob": {
-			"title": "A pro-tem moderator on Programming Challenges & Code Golf."
+		"Java": {
+			"title": "The go-to example of a verbose language. It can be used in many contexts"
+		},
+		"Abandon all work ye who enter here": {
+			"title": "As the meme reads, all hope of doing work can be considered lost upon entering the chatroom"
+		},
+		"Graduation": {
+			"title": "Graduation from beta status is a big deal, but seemingly an impossibly far distance away"
+		},
+		"ಠ_ಠ": {
+			"title": "disapproval face disapproves of you"
+		},
+		"Revision 38": {
+			"title": "Basically making edits for adding useless tags or making pointless fixes",
+			"find": ["(r38|revision 38)", "gi"]
+		},
+		"Alex is wrong": {
+			"title": "He's just wrong."
+		},
+		"Failing to Outgolf Dennis": {
+			"title": "Ha! Good luck outgolfing Dennis!"
+		},
+		"-15": {
+			"title": "An incoming rain of downvotes, or a metaphor for meta-downvoting"
+		},
+		"Code Review": {
+			"title": "PPCG's rival site, and seeimingly their ideological antagonist.",
+			"find": ["(CR|Code Review)", "gi"]
+		},
+		"Carrots": {
+			"title": "Not the &quot;wassup doc?&quot; kind, but the ^ kind.",
+			"find": ["(carrots)", "gi"]
+		},
+		"Jimmy": {
+			"title": "A sad story of peer pressure and self-identity."
+		},
+		"overhanded": {
+			"title": "A disliked tag"
 		}
 	}
 }

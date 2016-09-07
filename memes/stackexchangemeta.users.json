@@ -1,0 +1,9 @@
+{
+	"desc": "Famous users on Meta Stack Exchange",
+	"list": "http://meta.stackexchange.com/users/",
+	"memes": {
+		"SmokeDetector": {
+			"title": "A bot who watches incoming questions for possible spam"
+		}
+	}
+}

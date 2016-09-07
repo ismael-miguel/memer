@@ -1,24 +1,62 @@
 {
 	"desc": "Users present in The 2nd monitor and across the whole CodeReview website",
+	"meta": "codereview.stackexchange.com",
+	"list": "http://codereview.stackexchange.com/users/",
 	"memes": {
 		"rolfl": {
-			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities."
+			"find":["(rolfl)","gi"],
+			"title": "One of CR's retired pro-tem mods, and one of CR's most active personalities",
+			"id": 31503
 		},
 		"Jamal": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator.",
-			"find": ["(jamal(?!ize[ds]?))", "gi"]
+			"title": "One of CR's former pro-tem mods, and a current elected moderator",
+			"find": ["(jamal(?!ize[ds]?))", "gi"],
+			"id": 22222
 		},
 		"200_success": {
-			"title": "One of CR's former pro-tem mods, and a current elected moderator."
+			"title": "One of CR's former pro-tem mods, and a current elected moderator",
+			"id": 9357
 		},
 		"Mat'sMug": {
-			"title": "One of CR's elected moderators."
+			"find": ["(matsmug)","gi"],
+			"title": "One of CR's elected moderators",
+			"id": 23788
 		},
-		"SimonAndréForsberg": {
-			"title": "One of CR's elected moderators, owner of Duga."
+		"SimonForsberg": {
+			"title": "One of CR's elected moderators, owner of Duga",
+			"id": 31562
 		},
 		"Duga": {
-			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes."
+			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes",
+			"id": 51786
+		},
+		"Captain Obvious": {
+			"find": ["(@?captainobvious)","gi"],
+			"title": "A feed that relays all the new questions posted on Code Review"
+		},
+        "RoboSanta": {
+			"title": "A bot that posts notable questions posted on Code Review"
+		},
+		"IsmaelMiguel": {
+			"title": "The creator of Memer",
+			"id": 53773
+		},
+        "Phrancis": {
+			"title": "Room owner of The 2nd Monitor and The Nth Monitor",
+			"id": 42632
+		},
+        "DanPantry": {
+			"title": "Room owner of The 2nd Monitor and The Nth Monitor",
+			"id": 42325
+		},
+        "Quill": {
+			"title": "Room owner of The Nth Monitor and collaborator on Memer",
+			"id": 62429
+		},
+		"Malachi": {
+			"find" : ["(malachi)","gi"],
+			"title": "Revivalist specializing in C#, SQL Server, VB, JavaScript, HTML, CSS",
+			"id": 18427
 		}
 	}
 }

@@ -3,16 +3,19 @@
 	"meta": "meta.anime.stackexchange.com/",
 	"memes": {
 		"Taisho": {
-			"title": "A bot programmed to post random images in the chatroom every now and again."
+			"title": "A bot programmed to post random images in the chatroom every now and again"
 		},
 		"HoiHoi-San": {
-			"title": "A bot programmed to post random images based on user input, has a few toys too."
+			"title": "A bot programmed to post random images based on user input, has a few toys too"
 		},
 		"#post": {
 			"title": "The command to summon @Taisho and force his posting. Use #post with a fruit afterwards ;-)"
 		},
 		"id-req": {
 			"title": "Shorthand for Identification Request."
+		},
+		"Matt hates hats": {
+			"title": "Matt just really hates hats"
 		}
 	}
 }

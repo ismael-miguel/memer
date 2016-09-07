@@ -50,5 +50,5 @@ Seriously, make an account on that community, and upvote their answers. They are
 
 [sen]:http://chat.stackexchange.com
 [the_2nd_monitor]:http://chat.stackexchange.com/rooms/8595/the-2nd-monitor
-[userscript_installer]:https://github.com/ismael-miguel/memer/raw/master/memer.next.user.js
+[userscript_installer]:https://github.com/ismael-miguel/memer/raw/master/memer.user.js
 [original_question]:http://codereview.stackexchange.com/questions/96724/the-2nd-monitor-chatroom-translator
