@@ -69,10 +69,10 @@
 			"find": ["(matsmug)","gi"],
 			"title": "One of CR's elected moderators"
 		},
-		"SimonForsberg": {
-			"title": "One of CR's elected moderators, owner of Duga",
-			"find" : ["(simonforsberg)","gi"],
-		},
+		//"SimonForsberg": {
+		//	"title": "One of CR's elected moderators, owner of Duga",
+		//	"find" : ["(simonforsberg)","gi"],
+		//},
 		"Duga": {
 			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes",
 			"find": ["(duga)","gi"],
