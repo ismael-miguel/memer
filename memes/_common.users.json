@@ -71,11 +71,11 @@
 		},
 		"SimonForsberg": {
 			"title": "One of CR's elected moderators, owner of Duga",
-			"find" : ["(simonforsberg)","gi"],
+			"find" : ["(simonforsberg)","gi"]
 		},
 		"Duga": {
 			"title": "A bot programmed by SimonAndrêForsberg. Duga posts SO/Programming.SE comments containing &quot;code review&quot;, and in seperate chat rooms, repo changes",
-			"find": ["(duga)","gi"],
+			"find": ["(duga)","gi"]
 		},
 		"Captain Obvious": {
 			"find": ["(@?captainobvious)","gi"],
@@ -83,23 +83,23 @@
 		},
 		"RoboSanta": {
 			"title": "A bot that posts notable questions posted on Code Review",
-			"find" : ["(robosanta)","gi"],
+			"find" : ["(robosanta)","gi"]
 		},
 		"IsmaelMiguel": {
 			"title": "The creator of Memer",
-			"find" : ["(ismaelmiguel)","gi"],
+			"find" : ["(ismaelmiguel)","gi"]
 		},
 		"PinCrash": {
 			"title": "Room owner of The 2nd Monitor and The Nth Monitor",
-			"find" : ["(pincrash|phrancis)","gi"],
+			"find" : ["(pincrash|phrancis)","gi"]
 		},
 		"DanPantry": {
 			"title": "Room owner of The Nth Monitor",
-			"find" : ["(danpantry)","gi"],
+			"find" : ["(danpantry)","gi"]
 		},
 		"Quill": {
 			"title": "Room owner of The Nth Monitor and collaborator on Memer",
-			"find" : ["(quill)","gi"],
+			"find" : ["(quill)","gi"]
 		},
 		"Malachi": {
 			"find" : ["(malachi)","gi"],
